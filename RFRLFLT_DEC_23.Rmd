@@ -1,6 +1,8 @@
 ---
 title: "RFRLFLT December, 2023"
-output: html_document
+output: 
+  html_document:
+    css: styles.css
 date: "2024-01-22"
 ---
 
