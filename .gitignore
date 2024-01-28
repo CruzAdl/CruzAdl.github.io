@@ -2,3 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
+*.Rmd
+*.R
+.\scripts\.*
+.\raw-data\.*
