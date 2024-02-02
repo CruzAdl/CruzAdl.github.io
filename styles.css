@@ -106,6 +106,22 @@ header h2, header h3 {
     content: "Parkruns"
 }
 
+#oldblog-cell .background-image {
+    background-image: url(imgs/pfbrain.jpg);
+}
+#oldblog-cell::after{
+    content: "Old Blog"
+}
+
+
+#stories-cell .background-image {
+    /* background-image: url(imgs/pfbrain.jpg); */
+}
+#stories-cell::after{
+    content: "Stories"
+}
+
+
 /* Dynamic effects reprise */
 .grid-cell:hover::after{
     opacity:1;
