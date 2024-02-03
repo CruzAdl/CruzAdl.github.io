@@ -46,7 +46,7 @@ header h2, header h3 {
     position: relative;
     text-align: center;
     transition: all 0.3s ease;
-    background-color: whitesmoke;
+    background-color: rgb(49, 30, 30);
     /* margin: 10px; Adds space around each cell */
     border: 2px solid #cccccc; /* Light grey border */
     box-sizing: border-box; /* Include the margin/border in the cell's dimensions */
