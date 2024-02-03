@@ -115,7 +115,7 @@ header h2, header h3 {
 
 
 #stories-cell .background-image {
-    /* background-image: url(imgs/pfbrain.jpg); */
+    background-image: url(imgs/stories_tn.jpg);
 }
 #stories-cell::after{
     content: "Stories"
