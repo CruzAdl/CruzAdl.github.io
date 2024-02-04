@@ -106,18 +106,18 @@ header h2, header h3 {
     content: "Parkruns"
 }
 
-#oldblog-cell .background-image {
-    background-image: url(imgs/pfbrain_tn.jpg);
-}
-#oldblog-cell::after{
-    content: "Old Blog"
-}
-
 #stories-cell .background-image {
     background-image: url(imgs/stories_tn.jpg);
 }
 #stories-cell::after{
     content: "Stories"
+}
+
+#oldblog-cell .background-image {
+    background-image: url(imgs/pfbrain_tn.jpg);
+}
+#oldblog-cell::after{
+    content: "Old Blog"
 }
 
 /* Dynamic effects reprise */
