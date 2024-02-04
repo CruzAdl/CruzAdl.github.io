@@ -5,5 +5,5 @@
 *.Rproj
 *.Rmd
 *.R
-.\scriptsR\.*
-.\rawdata\.*
+scriptsR/
+rawdata/
