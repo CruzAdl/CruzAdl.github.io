@@ -107,12 +107,11 @@ header h2, header h3 {
 }
 
 #oldblog-cell .background-image {
-    background-image: url(imgs/pfbrain.jpg);
+    background-image: url(imgs/pfbrain_tn.jpg);
 }
 #oldblog-cell::after{
     content: "Old Blog"
 }
-
 
 #stories-cell .background-image {
     background-image: url(imgs/stories_tn.jpg);
@@ -120,7 +119,6 @@ header h2, header h3 {
 #stories-cell::after{
     content: "Stories"
 }
-
 
 /* Dynamic effects reprise */
 .grid-cell:hover::after{
