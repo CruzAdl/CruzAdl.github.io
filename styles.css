@@ -112,6 +112,14 @@ header h2, header h3 {
     content: "Stories"
 }
 
+#letterbox-cell .background-image {
+    /* background-image: url(imgs/pfbrain_tn.jpg); */
+    background-color: #000000;
+}
+#letterbox-cell::after{
+    content: "Tell me something"
+}
+
 #oldblog-cell .background-image {
     background-image: url(imgs/pfbrain_tn.jpg);
 }
