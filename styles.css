@@ -34,9 +34,8 @@ header h2, header h3 {
 .grid {
     display:grid;
     gap:1em;
-    grid-template-columns: repeat(3, minmax(300px, auto)); /* Auto sizing columns minmax(0, auto) */
-    grid-template-rows: repeat(3, minmax(168.75px, auto)); /* Apparently essential or height collapses*/
-    /* grid-auto-rows: minmax(0,0) eventually should use this*/
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto)); /* Auto sizing columns minmax(0, auto) */
+    /* grid-template-rows: repeat(auto-fit, minmax(168.75px, auto));  Apparently essential or height collapses*/
     background-color: black;
     padding-top: 10px;
 }
@@ -45,12 +44,12 @@ header h2, header h3 {
 .grid-cell {
     position: relative;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
     background-color: rgb(49, 30, 30);
-    /* margin: 10px; Adds space around each cell */
     border: 2px solid #cccccc; /* Light grey border */
     box-sizing: border-box; /* Include the margin/border in the cell's dimensions */
     color:white;
+    height: 168.75px;
 }
 
 
