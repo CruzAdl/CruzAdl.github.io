@@ -1,3 +1,3 @@
 # CruzAdl.github.io
 
-[website](CruzAdl.github.io)
+[website](https://cruzadl.github.io/)
