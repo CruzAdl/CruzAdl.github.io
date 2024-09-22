@@ -130,7 +130,7 @@ map <- maplibre(style = carto_style("voyager")) |>
                    column = "Complete",
                    values = c(1,0),
                    stops = c("lightgreen","transparent"),
-                   default = "#cccccc"
+                   default = "black"
                  ),
                  fill_outline_color = "black",
                  fill_opacity = 0.5,
@@ -142,7 +142,7 @@ map <- maplibre(style = carto_style("voyager")) |>
                      column = "Complete",
                      values = c(1,0),
                      stops = c("green","#b10000"),
-                     default = "#cccccc"
+                     default = "black"
                    ),
                    circle_radius = 6,
                    circle_opacity=0.8,
