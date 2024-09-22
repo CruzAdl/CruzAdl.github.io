@@ -90,7 +90,9 @@ borough_race_pts <- st_intersection(
 
 # 2. Boroughs with T/F (basic completed not completed boroughs)
 borough_pol <- borough_pol %>% 
-  mutate(Complete=ifelse(Borough%in%borough_race_pts$Borough,1, 0))
+  mutate(Complete=ifelse(Borough%in%borough_race_pts$Borough,1, 0)) %>% 
+  mutate(BoroughLab=paste0("<p style='color: black;'>", Borough, "</p>"))
+  
 
 # 3. Borough park data (more for map)
 borough_prk_pts <-full_join(
@@ -113,7 +115,8 @@ borough_prk_pts <-full_join(
   mutate(
     n=ifelse(is.na(n),0,n),
     html_table=ifelse(is.na(html_table),"TBR",html_table)
-    )
+    ) %>%
+  mutate(EventLab=paste0("<p style='color: black;'>", Event, "</p>"))
 
 # could save
 # my_parkruns.csv
@@ -134,7 +137,7 @@ map <- maplibre(style = carto_style("voyager")) |>
                  ),
                  fill_outline_color = "black",
                  fill_opacity = 0.5,
-                 tooltip = "Borough",
+                 tooltip = "BoroughLab",
                  before_id="building") |>
   add_circle_layer(id="parkruns",
                    source=borough_prk_pts,
@@ -146,7 +149,7 @@ map <- maplibre(style = carto_style("voyager")) |>
                    ),
                    circle_radius = 6,
                    circle_opacity=0.8,
-                   tooltip = "Event",
+                   tooltip = "EventLab",
                    popup="html_table",
                    before_id="building")
 
