@@ -1,0 +1,14 @@
+project:
+  type: website
+
+website:
+  title: "QruzAdl"
+  search:
+    location: navbar
+    type: overlay
+  navbar: false
+
+format:
+  html:
+    page-layout: custom
+    css: styles.css

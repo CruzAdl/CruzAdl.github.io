@@ -1,0 +1,31 @@
+TO ADD NEW PARKRUN RESULTS TO SOURCE DATA
+
+Easiest
+
+1. copy last run
+2. add to file "rawdata/raw_results.csv"
+
+
+Easiest if want to redo all
+
+1. screenshot latest results
+2. go to https://extracttable.com/
+3. download csv and move to rawdata/
+
+
+GPT Solution
+
+1. copy part of the data
+2. fill into template below and request:
+
+Skip the chat.
+Take this copied table
+
+Pymmes	10/02/2024	598	48	22:57	56.21%
+Lordship Recreation Ground	27/01/2024	68	33	22:15	57.98%
+Hackney Marshes	24/09/2022	567	58	22:16	57.93%
+Clapham Common	05/03/2022	119	120	23:05	55.88%
+
+And return a .csv file with the copied table formatted and with column names being Event,Run.Date,Run.Number,Position,Time,Age.Grade,PB
+
+3. Download table and bind with previous

@@ -1,0 +1,54 @@
+---
+title: ""
+css: styles_index.css
+navbar: false
+---
+
+::: {.grid}
+
+::: {.g-col-12}
+
+## Lanterns of Glory: Topics of Interest for the Universal Tribe
+
+### and my personal non-professional endeavours so please don't take it too seriously
+
+:::
+
+::: {.g-col-12 .grid-cell #zine-cell}
+
+[](zines.qmd){.full-cell-link}
+
+:::
+
+::: {.g-col-6 .grid-cell #bookr-cell}
+
+[](bookreviews.qmd){.full-cell-link}
+
+:::
+
+::: {.g-col-6 .grid-cell #parkrun-cell}
+
+[](parkrun.qmd){.full-cell-link}
+
+:::
+
+::: {.g-col-6 .grid-cell #stories-cell}
+
+[](stories.qmd){.full-cell-link}
+
+:::
+
+::: {.g-col-6 .grid-cell #letterbox-cell}
+
+[](letterbox.qmd){.full-cell-link}
+
+:::
+
+::: {.g-col-12 .grid-cell #oldblog-cell}
+
+[](https://ihavetodothisifnot.wordpress.com/){.full-cell-link}
+
+
+:::
+
+:::

@@ -1,0 +1,84 @@
+---
+title: "&#32;"
+format: html
+css: styles.css
+---
+
+```{r, include = FALSE}
+
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  echo=FALSE,warning = FALSE, message = FALSE,
+  comment = "#>"
+)
+
+librarian::shelf(
+  dplyr,data.table,
+  lubridate, stringr, 
+  sf, 
+  mapgl, ggplot2,plotly,flextable,htmltools,viridis
+  )
+
+source("scriptsR/parkrun/dataproc_map_tabs.R")
+
+```
+
+
+```{r}
+htmltools::HTML(
+  "<hr>
+  <p><a class='home-link' href='/index.qmd'>Back to home</a></p>
+  <p><a class='web-link' href='https://www.parkrun.org.uk/parkrunner/4452710/all/'>On the parkrun website</a></p>
+  <hr>"
+)
+```
+
+::: {.panel-tabset .nav-pills}
+
+## Timeline
+
+```{r}
+timeline_evently
+```
+
+## Borough Challenge
+
+<p>Show events ran and nearby, click on the circle for location results</p>
+```{r}
+map
+```
+
+## All results
+
+```{r}
+htmltools_value(ft)
+```
+
+## Overview
+
+```{r}
+
+htmltools::HTML(
+  paste0(
+    "<p>Participated in ", total_summary$Events, " events running ",
+    total_summary$Kilometers, " kilometers in ", total_summary$TotalTime,
+    " with a median runtime of ", total_summary$MedianTime, ".</p>"
+  )
+)
+
+# Display summaries side by side
+htmltools::div(
+  style = "display: flex; gap: 20px; justify-content: space-evenly;",
+  htmltools_value(tbe),
+  htmltools_value(tby)
+)
+
+```
+
+:::
+
+<!-- ## The Code -->
+
+<!-- ```{r, showcode, ref.label=c('rscript'), echo=TRUE, eval = FALSE} -->
+
+<!-- ``` -->

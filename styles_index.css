@@ -1,0 +1,124 @@
+body {
+    color:red;
+    background-color: black;
+}
+
+.grid {
+    display: grid;
+    gap: 1em;
+    color:red;
+    background-color: black;
+    padding: 35px;
+}
+
+.title-cell, h1, h2, h3  {
+    border: none;
+    padding-bottom: 0px;
+    margin: 0px;
+
+    justify-content:center;
+    align-content: center;
+    text-align: center;
+
+}
+
+.grid-cell {
+    position: relative;
+    min-height: 250px;
+    text-align: center;
+
+    background-color: rgb(49, 30, 30);
+
+    justify-content:center;
+    align-content: center;
+
+    background-position: center;
+    background-size: 100% 100%;    
+    background-repeat: no-repeat;
+
+    border: 2px solid #cccccc; /* Light grey border */
+    box-sizing: border-box; /* Include the margin/border in the cell's dimensions */
+    color: white;
+    overflow: hidden; /* Ensure content stays within the cell */
+}
+
+/* Overlay text */
+.grid-cell::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+    font-size: 30px; /* Adjusted for better fit */
+    font-weight: 900; /* Bolder text */
+    text-shadow: 0px 0px 5px black; /* Enhanced text shadow for contrast */
+    pointer-events: none; /* Ensure it doesn't interfere with clicking */
+}
+
+.full-cell-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-decoration: none; /* Remove underline */
+}
+
+#zine-cell {
+    background-image: url(media/zines_tn.png);
+}
+
+#zine-cell::after {
+    content: "New Blog";
+}
+
+#bookr-cell {
+    background-image: url(media/bookreviews_tn.png);
+}
+
+#bookr-cell::after {
+    content: "Book Reviews";
+}
+
+#parkrun-cell  {
+    background-image: url(media/parkruns_tn.png);
+}
+
+#parkrun-cell::after {
+    content: "Parkruns";
+}
+
+#stories-cell {
+    background-image: url(media/stories_tn.jpg);
+}
+
+#stories-cell::after {
+    content: "Stories";
+}
+
+#letterbox-cell {
+    /* If you have an image, uncomment and set the path */
+    /* background-image: url(media/letterbox_tn.jpg); */
+    background-color: #000000;
+}
+
+#letterbox-cell::after {
+    content: "Letterbox";
+}
+
+#oldblog-cell {
+    background-image: url(media/pfbrain_tn.jpg);
+    background-size: 100% 100%;
+}
+
+#oldblog-cell::after {
+    content: "Old Blog";
+}
+
+/* Show overlay text on hover */
+.grid-cell:hover::after {
+    opacity: 1;
+}

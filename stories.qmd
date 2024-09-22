@@ -1,0 +1,8 @@
+---
+title: "Stories"
+---
+
+[Back to Home](index.qmd)
+
+- [Have you ever seen an alligator?](posts/stories/STR_Alligator.qmd)
+- [The World Is Very Old](posts/stories/STR_TheWorldIsVeryOld.qmd)
