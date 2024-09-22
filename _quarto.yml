@@ -1,8 +1,9 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "QruzAdl"
+  title: "CruzAdl"
   search:
     location: navbar
     type: overlay
