@@ -38,10 +38,10 @@ to_hhmmss <- function(seconds) {
 # Generate HTML row for popup table
 generate_html_row <- function(Date, Time, Position, AgeGrade) {
   paste0("<tr>",
-         "<td style='border: 1px solid black; text-align: center; padding: 5px;'>", Date, "</td>",
-         "<td style='border: 1px solid black; text-align: center; padding: 5px;'>", Time, "</td>",
-         "<td style='border: 1px solid black; text-align: center; padding: 5px;'>", Position, "</td>",
-         "<td style='border: 1px solid black; text-align: center; padding: 5px;'>", AgeGrade, "%</td>",
+         "<td style='border: 1px solid black; text-align: center; padding: 5px; color: black;'>", Date, "</td>",
+         "<td style='border: 1px solid black; text-align: center; padding: 5px; color: black;'>", Time, "</td>",
+         "<td style='border: 1px solid black; text-align: center; padding: 5px; color: black;'>", Position, "</td>",
+         "<td style='border: 1px solid black; text-align: center; padding: 5px; color: black;'>", AgeGrade, "%</td>",
          "</tr>")
 }
 
@@ -49,10 +49,10 @@ generate_html_row <- function(Date, Time, Position, AgeGrade) {
 assemble_html_table <- function(html_rows) {
   if (length(html_rows) == 0) return(NA)
   header <- "<tr>
-               <th style='border: 1px solid black; text-align: center; padding: 5px;'>Date</th>
-               <th style='border: 1px solid black; text-align: center; padding: 5px;'>Time</th>
-               <th style='border: 1px solid black; text-align: center; padding: 5px;'>Position</th>
-               <th style='border: 1px solid black; text-align: center; padding: 5px;'>Age Grade</th>
+               <th style='border: 1px solid black; text-align: center; padding: 5px; color: black;'>Date</th>
+               <th style='border: 1px solid black; text-align: center; padding: 5px; color: black;'>Time</th>
+               <th style='border: 1px solid black; text-align: center; padding: 5px; color: black;'>Position</th>
+               <th style='border: 1px solid black; text-align: center; padding: 5px; color: black;'>Age Grade</th>
              </tr>"
   paste0("<table style='border-collapse: collapse;'>", header, html_rows, "</table>")
 }
@@ -238,7 +238,7 @@ ft <- table_dta %>%
 
 ft <- flextable(ft) %>%
   theme_vanilla() %>%
-  set_caption("All Results") %>%
+  set_caption("All Resultsh") %>%
   color(color = "white", part = "header") %>%
   bg(i = ~Percentile <= 33, bg = "darkred", part = "body") %>%
   color(i = ~Percentile <= 66, color = "white", part = "body") %>% 
