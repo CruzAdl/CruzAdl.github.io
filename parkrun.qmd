@@ -25,13 +25,9 @@ source("scriptsR/parkrun/dataproc_map_tabs.R")
 
 [On the parkrun website](https://www.parkrun.org.uk/parkrunner/4452710/all/)
 
-:::
-
-Parkrun is a free and open community event, a 5k race taking place on Saturdays at 9am across many parks in the world. I have been parkrunning since 2017 or so. I plot some of my history below.
+Parkrun is a free and open community event, a 5k race taking place on Saturdays at 9am across many parks in the world. I have been parkrunning since 2017 or so. I plot all the events I've taken part in, and some other stats.
 
 I am undertaking a challenge to run one parkrun in each of the 32 boroughs of Greater London, progress shown in the map.
-
-:::
 
 ::: {.panel-tabset .nav-pills}
 
