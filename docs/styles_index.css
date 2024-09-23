@@ -1,42 +1,25 @@
-body {
-    color:red;
-    background-color: black;
-}
-
 .grid {
+    color: red;
     display: grid;
     gap: 1em;
-    color:red;
-    background-color: black;
-    padding: 35px;
 }
 
-.title-cell, h1, h2, h3  {
+.title-cell, h1, h2, h3 {
     border: none;
-    padding-bottom: 0px;
-    margin: 0px;
-
-    justify-content:center;
-    align-content: center;
+    padding-bottom: 0;
+    margin: 0;
     text-align: center;
-
 }
 
 .grid-cell {
     position: relative;
     min-height: 250px;
     text-align: center;
-
     background-color: rgb(49, 30, 30);
-
-    justify-content:center;
-    align-content: center;
-
     background-position: center;
-    background-size: 100% 100%;    
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-
-    border: 2px solid #cccccc; /* Light grey border */
+    border: 2px solid #ccc; /* Light grey border */
     box-sizing: border-box; /* Include the margin/border in the cell's dimensions */
     color: white;
     overflow: hidden; /* Ensure content stays within the cell */
@@ -53,7 +36,7 @@ body {
     color: white;
     font-size: 30px; /* Adjusted for better fit */
     font-weight: 900; /* Bolder text */
-    text-shadow: 0px 0px 5px black; /* Enhanced text shadow for contrast */
+    text-shadow: 0 0 5px black; /* Enhanced text shadow for contrast */
     pointer-events: none; /* Ensure it doesn't interfere with clicking */
 }
 
@@ -83,7 +66,7 @@ body {
     content: "Book Reviews";
 }
 
-#parkrun-cell  {
+#parkrun-cell {
     background-image: url(media/parkruns_tn.png);
 }
 
@@ -102,7 +85,7 @@ body {
 #letterbox-cell {
     /* If you have an image, uncomment and set the path */
     /* background-image: url(media/letterbox_tn.jpg); */
-    background-color: #000000;
+    background-color: #000;
 }
 
 #letterbox-cell::after {
@@ -111,7 +94,6 @@ body {
 
 #oldblog-cell {
     background-image: url(media/pfbrain_tn.jpg);
-    background-size: 100% 100%;
 }
 
 #oldblog-cell::after {
