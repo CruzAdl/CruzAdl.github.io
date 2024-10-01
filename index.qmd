@@ -52,3 +52,9 @@ navbar: false
 :::
 
 :::
+
+# Latest  
+
+[Desert Island Discs DJs](posts/zines/desert_island_discs_djs.qmd)  
+
+

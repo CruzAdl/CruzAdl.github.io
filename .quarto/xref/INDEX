@@ -61,5 +61,17 @@
   },
   "pages/letterbox.qmd": {
     "letterbox.html": "bdc16a54"
+  },
+  "posts/zines/The people who send you (and Thatcher, and Clooney) to a desert island.qmd": {
+    "The people who send you (and Thatcher, and Clooney) to a desert island.html": "4dac0247"
+  },
+  "posts/zines/desert_island_discs_1.qmd": {
+    "desert_island_discs_1.html": "ac9a9c0f"
+  },
+  "posts/zines/desert_island_discs_app_1.qmd": {
+    "desert_island_discs_app_1.html": "4f4b26cf"
+  },
+  "posts/zines/desert_island_discs_djs.qmd": {
+    "desert_island_discs_djs.html": "97fa6735"
   }
 }

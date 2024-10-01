@@ -1,0 +1,37 @@
+
+
+/* Center and narrow the shinylive-wrapper */
+div.shinylive-wrapper {
+  margin: 0 auto;                /* Center horizontally */
+  border-radius: 0;
+  display: flex;                 /* Enable Flexbox */
+  justify-content: center;       /* Center horizontally */
+  align-items: center;           /* Center vertically */
+  height: 100vh;                 /* Full height of the viewport */
+  width: 80%;                    /* Set the width of the container */
+  max-width: 75%;              /* Optional: Set a max-width for narrower layout */
+}
+
+.shinylive-container {
+  background-color: #eeeff2;
+  min-height: auto;
+  width: 100%;                   /* Ensure it takes full width of the wrapper */
+}
+
+.shinylive-container > div {
+  box-shadow: none;
+  display: flex;
+  justify-content: center;      /* Center inner content horizontally */
+  align-items: center;          /* Center inner content vertically */
+}
+
+.editor-container .cm-editor .cm-scroller {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+iframe.app-frame {
+  /* Override the default margin from Bootstrap */
+  margin-bottom: 0;
+}
+
