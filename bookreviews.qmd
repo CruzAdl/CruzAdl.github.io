@@ -1,10 +1,8 @@
 ---
 title: "Book Reviews"
+format: html
+listing: 
+  contents: 
+    - "posts/bookreviews/*.qmd"
+  type: grid
 ---
-
-[Back to Home](/index.qmd)
-
-- [Women & Power, Mary Beard](posts/bookreviews/BR_WomenAndPowerMaryBeard.qmd)
-- [Blood Meridian, Cormac McCarthy](posts/bookreviews/BR_BloodMeridianCormacMcCarthy.qmd)
-- [Good Old Neon, David Foster Wallace](posts/bookreviews/BR_GoodOldNeonDFW.qmd)
-- [The Closed Circle, Jonathan Coe](posts/bookreviews/BR_TheClosedCircleJC.qmd)

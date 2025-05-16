@@ -1,0 +1,8 @@
+---
+title: "Lifeslices"
+format: html
+listing: 
+  contents: 
+    - "posts/lifeslices/*.qmd"
+  type: grid
+---

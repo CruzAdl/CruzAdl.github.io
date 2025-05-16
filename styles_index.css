@@ -1,106 +1,72 @@
-.grid {
-    color: red;
-    display: grid;
-    gap: 1em;
+/* ─── palette ─────────────────────────────────────────────── */
+:root{
+  --cell-bg:#000;          /* background colour behind image   */
+  --cell-br:#ccc;          /* thin border                       */
+  --txt    :#c00;          /* your red                          */
 }
 
-.title-cell, h1, h2, h3 {
-    border: none;
-    padding-bottom: 0;
-    margin: 0;
-    text-align: center;
+/* ─── grid basics ─────────────────────────────────────────── */
+.grid{
+  display:grid;
+  gap:1em;
+  color:var(--txt);
+}
+.grid h1,.grid h2,.grid h3{margin:0;text-align:center}
+.grid a{color:var(--txt)}
+
+/* ─── cell shell ──────────────────────────────────────────── */
+.grid-cell{
+  position:relative;
+  min-height:250px;
+  border:2px solid var(--cell-br);
+  background:var(--cell-bg);
+  box-sizing:border-box;
+  text-align:center;
+  overflow:hidden;
+  padding:1em;
+  color:inherit;
 }
 
-.grid-cell {
-    position: relative;
-    min-height: 250px;
-    text-align: center;
-    background-color: rgb(49, 30, 30);
-    background-position: center;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    border: 2px solid #ccc; /* Light grey border */
-    box-sizing: border-box; /* Include the margin/border in the cell's dimensions */
-    color: white;
-    overflow: hidden; /* Ensure content stays within the cell */
+/* ─── full-tile link ─────────────────────────────────────── */
+.cell-link{position:relative;}              /* containing block    */
+.cell-link a{
+  position:absolute;
+  inset:0;                                  /* fill the cell       */
+  display:block;
+  z-index:3;                                /* ← TOP of stack      */
+}
+/* keep the paragraph that Pandoc wraps around the link
+   from becoming the positioning context                     */
+.cell-link p{position:static;margin:0;}
+
+/* ─── darken on hover ─────────────────────────────────────── */
+.grid-cell::before{
+  content:"";
+  position:absolute; inset:0;
+  background:rgba(0,0,0,0);                 /* transparent idle    */
+  transition:background .25s ease;
+  pointer-events:none;                      /* clicks pass through */
+  z-index:0;                                /* under everything    */
+}
+.grid-cell:hover::before{
+  background:rgba(0,0,0,.65);               /* dark mask           */
 }
 
-/* Overlay text */
-.grid-cell::after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    color: white;
-    font-size: 30px; /* Adjusted for better fit */
-    font-weight: 900; /* Bolder text */
-    text-shadow: 0 0 5px black; /* Enhanced text shadow for contrast */
-    pointer-events: none; /* Ensure it doesn't interfere with clicking */
+/* ─── text fade-in ────────────────────────────────────────── */
+.grid-cell :is(h1,h2,h3,p){
+  opacity:0; transform:translateY(6px);
+  transition:opacity .25s ease,transform .25s ease;
+}
+/* headings need to sit above the overlay but below the link
+   so the text remains visible and clicks still work          */
+.grid-cell :is(h1,h2,h3){position:relative;z-index:2;}
+
+.grid-cell:hover :is(h1,h2,h3,p){
+  opacity:1; transform:none;
 }
 
-.full-cell-link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    text-decoration: none; /* Remove underline */
-}
-
-#zine-cell {
-    background-image: url(media/zines_tn.png);
-}
-
-#zine-cell::after {
-    content: "New Blog";
-}
-
-#bookr-cell {
-    background-image: url(media/bookreviews_tn.png);
-}
-
-#bookr-cell::after {
-    content: "Book Reviews";
-}
-
-#parkrun-cell {
-    background-image: url(media/parkruns_tn.png);
-}
-
-#parkrun-cell::after {
-    content: "Parkruns";
-}
-
-#stories-cell {
-    background-image: url(media/stories_tn.jpg);
-}
-
-#stories-cell::after {
-    content: "Stories";
-}
-
-#letterbox-cell {
-    /* If you have an image, uncomment and set the path */
-    /* background-image: url(media/letterbox_tn.jpg); */
-    background-color: #000;
-}
-
-#letterbox-cell::after {
-    content: "Letterbox";
-}
-
-#oldblog-cell {
-    background-image: url(media/pfbrain_tn.jpg);
-}
-
-#oldblog-cell::after {
-    content: "Old Blog";
-}
-
-/* Show overlay text on hover */
-.grid-cell:hover::after {
-    opacity: 1;
-}
+/* ─── image assignment (ONE place) ───────────────────────── */
+#blog-cell   {background-image:url(media/zines_tn.png)}
+#parkrun-cell{background-image:url(media/parkruns_tn.png)}
+#oldblog-cell{background-image:url(media/pfbrain_tn.jpg)}
+#bookr-cell  {background-image:url(media/bookreviews_tn.png)}

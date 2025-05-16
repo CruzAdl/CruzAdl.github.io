@@ -8,53 +8,32 @@ navbar: false
 
 ::: {.g-col-12}
 
-## Lanterns of Glory: Topics of Interest for the Universal Tribe
+# L O G
 
-### and my personal non-professional endeavours so please don't take it too seriously
+## Lanterns of Glory
 
-:::
+### Topics of Interest for the Universal Tribe
 
-::: {.g-col-12 .grid-cell #zine-cell}
-
-[](zines.qmd){.full-cell-link}
+#### Unless otherwise stated nothing here is serious
 
 :::
 
-::: {.g-col-6 .grid-cell #bookr-cell}
+::: {.g-col-12 .grid-cell .cell-link #blog-cell}
 
-[](bookreviews.qmd){.full-cell-link}
-
-:::
-
-::: {.g-col-6 .grid-cell #parkrun-cell}
-
-[](parkrun.qmd){.full-cell-link}
+[](blog.qmd)
 
 :::
 
-::: {.g-col-6 .grid-cell #stories-cell}
+::: {.g-col-12 .grid-cell .cell-link #parkrun-cell}
 
-[](stories.qmd){.full-cell-link}
-
-:::
-
-::: {.g-col-6 .grid-cell #letterbox-cell}
-
-[](letterbox.qmd){.full-cell-link}
+[](parkrun.qmd)
 
 :::
 
-::: {.g-col-12 .grid-cell #oldblog-cell}
+::: {.g-col-12 .grid-cell .cell-link #oldblog-cell}
 
-[](https://ihavetodothisifnot.wordpress.com/){.full-cell-link}
-
+[](https://ihavetodothisifnot.wordpress.com/)
 
 :::
 
 :::
-
-# Latest  
-
-[Desert Island Discs DJs](posts/zines/desert_island_discs_djs.qmd)  
-
-

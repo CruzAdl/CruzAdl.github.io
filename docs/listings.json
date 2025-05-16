@@ -1,0 +1,32 @@
+[
+  {
+    "listing": "/stories.html",
+    "items": [
+      "/posts/stories/STR_Alligator.html",
+      "/posts/stories/STR_TheWorldIsVeryOld.html"
+    ]
+  },
+  {
+    "listing": "/other.html",
+    "items": [
+      "/posts/other/did_djs.html"
+    ]
+  },
+  {
+    "listing": "/bookreviews.html",
+    "items": [
+      "/posts/bookreviews/BR_BloodMeridianCormacMcCarthy.html",
+      "/posts/bookreviews/BR_GoodOldNeonDFW.html",
+      "/posts/bookreviews/BR_TheClosedCircleJC.html",
+      "/posts/bookreviews/BR_WomenAndPowerMaryBeard.html"
+    ]
+  },
+  {
+    "listing": "/lifeslices.html",
+    "items": [
+      "/posts/lifeslices/RFRLFLT_December_2023.html",
+      "/posts/lifeslices/RFRLFLT_February_2024.html",
+      "/posts/lifeslices/RFRLFLT_January_2024.html"
+    ]
+  }
+]

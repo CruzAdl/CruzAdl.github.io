@@ -157,33 +157,33 @@ map <- maplibre(style = carto_style("voyager")) |>
 timeline_data <- borough_race_pts
 ymaxred = max(timeline_data$inMinutes)
 
-dfred <- data.frame(
+dfbigflu <- data.frame(
   xmini = as.Date("2019-12-31"),
   xmaxi = as.Date("2021-05-01"),
   ymini = 17.5,
   ymaxi = ymaxred,
-  lab="Big Flu Time"
+  lab="Covid-19: Parkrun cancelled"
 )
 
-dfblue <- data.frame(
-  xmini = min(timeline_data$Date) - 100,  # Adjust as needed for date subtraction
-  xmaxi = max(timeline_data$Date) + 100,  # Adjust as needed for date addition
+dfplantfas <- data.frame(
+  xmini = as.Date("2024-10-25"),
+  xmaxi = as.Date("2025-05-05"),
   ymini = 17.5,
-  ymaxi = 22,
-  lab="Target Time"
+  ymaxi = ymaxred,
+  lab = "Atypical Plantar Fasciitis"
 )
 
 # Load colorblind-friendly palette
 event_colors <- c(colorRampPalette(
   brewer.pal(min(length(unique(timeline_data$Event)), 12), "Paired")
-  )(length(unique(timeline_data$Event))), "red","blue")
+  )(length(unique(timeline_data$Event))),"orange", "red")
 
 # Create the timeline plot
 timeline_event <- 
   ggplot(data=timeline_data, aes(x = Date, y = inMinutes, fill = Event, time=Time)) +
-  geom_rect(data = dfblue, mapping=aes(xmin = xmini, xmax = xmaxi, ymin = ymini, ymax = ymaxi, fill=lab), 
+  geom_rect(data = dfplantfas, mapping=aes(xmin = xmini, xmax = xmaxi, ymin = ymini, ymax = ymaxi, fill=lab), 
             alpha = 0.3, color=NA, inherit.aes = F) +
-  geom_rect(data = dfred, mapping=aes(xmin = xmini, xmax = xmaxi, ymin = ymini, ymax = ymaxi, fill=lab), 
+  geom_rect(data = dfbigflu, mapping=aes(xmin = xmini, xmax = xmaxi, ymin = ymini, ymax = ymaxi, fill=lab), 
             alpha = 0.3, color=NA, inherit.aes = F) +
   geom_point(size = 3, shape=21, stroke=0.3) +
   scale_fill_manual(values = event_colors) +

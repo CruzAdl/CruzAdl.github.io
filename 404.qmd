@@ -2,4 +2,4 @@
 title: "Issues"
 ---
 
-Look away ... I'm 404 erroring
+Look away ... I'm 404 error-ing

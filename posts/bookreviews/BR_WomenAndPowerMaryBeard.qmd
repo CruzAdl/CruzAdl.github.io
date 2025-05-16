@@ -2,7 +2,7 @@
 title: "Women & Power, Mary Beard"
 ---
 
-[Back](https://CruzAdl.github.io/bookreviews.qmd) | [Home](https://CruzAdl.github.io/index.qmd)
+[Back](https://CruzAdl.github.io/bookreviews.qmd) | [Home](index.qmd)
 
 *31-01-2024*
 

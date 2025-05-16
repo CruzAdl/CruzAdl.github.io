@@ -73,5 +73,29 @@
   },
   "posts/zines/desert_island_discs_djs.qmd": {
     "desert_island_discs_djs.html": "97fa6735"
+  },
+  "posts.qmd": {
+    "posts.html": "fca58341"
+  },
+  "blog.qmd": {
+    "blog.html": "c38bf039"
+  },
+  "lifeslices.qmd": {
+    "lifeslices.html": "1de9d80f"
+  },
+  "other.qmd": {
+    "other.html": "a994a992"
+  },
+  "posts/lifeslices/RFRLFLT_December_2023.qmd": {
+    "RFRLFLT_December_2023.html": "5fd20519"
+  },
+  "posts/lifeslices/RFRLFLT_February_2024.qmd": {
+    "RFRLFLT_February_2024.html": "c417ce80"
+  },
+  "posts/lifeslices/RFRLFLT_January_2024.qmd": {
+    "RFRLFLT_January_2024.html": "a70f0e9b"
+  },
+  "posts/other/did_djs.qmd": {
+    "did_djs.html": "2749ec63"
   }
 }

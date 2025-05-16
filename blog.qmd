@@ -1,0 +1,40 @@
+---
+title: "Blog/Stories/Reviews/Posts"
+css: styles_index.css
+---
+
+[Back to Home](/index.qmd)
+
+::: {.grid}
+
+::: {.g-col-6 .grid-cell #blog-cell}
+
+## [Lifeslice](lifeslices.qmd)
+
+:::
+
+::: {.g-col-6 .grid-cell}
+
+## [Stories](stories.qmd)
+
+:::
+
+::: {.g-col-6 .grid-cell #bookr-cell}
+
+## [Book Reviews](bookreviews.qmd)
+
+:::
+
+:::{.g-col-6 .grid-cell}
+
+## [Posts](other.qmd)
+
+:::
+
+:::
+
+## Recommended blogs
+
+I love the old internet, but it is like a museum, you cannot spend much time there, and people rarely go.
+
+[Grave Stories](https://grave-stories.com/)
