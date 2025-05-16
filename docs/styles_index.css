@@ -11,7 +11,7 @@
   gap:1em;
   color:var(--txt);
 }
-.grid h1,.grid h2,.grid h3{margin:0;text-align:center}
+.grid h1,.grid h2,.grid h3, .grid h4{margin:0;text-align:center}
 .grid a{color:var(--txt)}
 
 /* ─── cell shell ──────────────────────────────────────────── */
@@ -25,6 +25,9 @@
   overflow:hidden;
   padding:1em;
   color:inherit;
+  background-size: contain;   /* show whole image */
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* ─── full-tile link ─────────────────────────────────────── */
@@ -68,5 +71,14 @@
 /* ─── image assignment (ONE place) ───────────────────────── */
 #blog-cell   {background-image:url(media/zines_tn.png)}
 #parkrun-cell{background-image:url(media/parkruns_tn.png)}
-#oldblog-cell{background-image:url(media/pfbrain_tn.jpg)}
+
+#posts-cell{background-image:url(media/pfbrain_tn.jpg)}
 #bookr-cell  {background-image:url(media/bookreviews_tn.png)}
+#stories-cell {background-image:url(media/stories_tn.png)}
+
+/* ─── nuke the heading underline ─────────────────────────── */
+.grid h2{          /* or .g-col-12 h2 if you prefer */
+  border-bottom:0;
+}
+
+.grid hr{display:none;}
