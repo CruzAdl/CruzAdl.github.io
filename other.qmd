@@ -1,8 +1,0 @@
----
-title: "Other"
-format: html
-listing: 
-  contents: 
-    - "posts/other/*.qmd"
-  type: grid
----
