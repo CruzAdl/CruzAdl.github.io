@@ -1,8 +1,0 @@
----
-title: "Book Reviews"
-format: html
-listing: 
-  contents: 
-    - "posts/bookreviews/*.qmd"
-  type: grid
----
