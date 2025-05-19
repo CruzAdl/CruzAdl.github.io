@@ -7,3 +7,8 @@ body {
 a {
     color: red;
 }
+
+h3.listing-title a {
+  color: red;
+  text-decoration: underline;
+}
