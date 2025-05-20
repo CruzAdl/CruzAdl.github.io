@@ -7,9 +7,11 @@
     ]
   },
   {
-    "listing": "/other.html",
+    "listing": "/lifeslices.html",
     "items": [
-      "/posts/other/did_djs.html"
+      "/posts/lifeslices/RFRLFLT_December_2023.html",
+      "/posts/lifeslices/RFRLFLT_February_2024.html",
+      "/posts/lifeslices/RFRLFLT_January_2024.html"
     ]
   },
   {
@@ -22,11 +24,10 @@
     ]
   },
   {
-    "listing": "/lifeslices.html",
+    "listing": "/other.html",
     "items": [
-      "/posts/lifeslices/RFRLFLT_December_2023.html",
-      "/posts/lifeslices/RFRLFLT_February_2024.html",
-      "/posts/lifeslices/RFRLFLT_January_2024.html"
+      "/posts/other/did_djs.html",
+      "/posts/other/theRoadToAnotherRound.html"
     ]
   }
 ]
