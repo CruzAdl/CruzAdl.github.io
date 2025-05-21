@@ -7,6 +7,12 @@
     ]
   },
   {
+    "listing": "/other.html",
+    "items": [
+      "/posts/other/did_djs.html"
+    ]
+  },
+  {
     "listing": "/lifeslices.html",
     "items": [
       "/posts/lifeslices/RFRLFLT_December_2023.html",
@@ -15,19 +21,13 @@
     ]
   },
   {
-    "listing": "/bookreviews.html",
+    "listing": "/reviews.html",
     "items": [
-      "/posts/bookreviews/BR_BloodMeridianCormacMcCarthy.html",
-      "/posts/bookreviews/BR_GoodOldNeonDFW.html",
-      "/posts/bookreviews/BR_TheClosedCircleJC.html",
-      "/posts/bookreviews/BR_WomenAndPowerMaryBeard.html"
-    ]
-  },
-  {
-    "listing": "/other.html",
-    "items": [
-      "/posts/other/did_djs.html",
-      "/posts/other/theRoadToAnotherRound.html"
+      "/posts/reviews/BR_BloodMeridianCormacMcCarthy.html",
+      "/posts/reviews/BR_WomenAndPowerMaryBeard.html",
+      "/posts/reviews/BR_GoodOldNeonDFW.html",
+      "/posts/reviews/BR_TheClosedCircleJC.html",
+      "/posts/reviews/FR_LVTNymph.html"
     ]
   }
 ]
