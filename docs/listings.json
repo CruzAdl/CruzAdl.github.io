@@ -1,15 +1,19 @@
 [
   {
-    "listing": "/stories.html",
+    "listing": "/parkrun.html",
     "items": [
-      "/posts/stories/STR_Alligator.html",
-      "/posts/stories/STR_TheWorldIsVeryOld.html"
+      "/posts/reviews/PR_WansteadFlats.html"
     ]
   },
   {
-    "listing": "/other.html",
+    "listing": "/reviews.html",
     "items": [
-      "/posts/other/did_djs.html"
+      "/posts/reviews/BR_BloodMeridianCormacMcCarthy.html",
+      "/posts/reviews/BR_WomenAndPowerMaryBeard.html",
+      "/posts/reviews/BR_GoodOldNeonDFW.html",
+      "/posts/reviews/BR_TheClosedCircleJC.html",
+      "/posts/reviews/FR_LVTNymph.html",
+      "/posts/reviews/PR_WansteadFlats.html"
     ]
   },
   {
@@ -21,22 +25,16 @@
     ]
   },
   {
-    "listing": "/parkrun.html",
+    "listing": "/other.html",
     "items": [
-      "/posts/reviews/PR_WansteadFlats.html",
-      "/posts/reviews/PR_BecktonPark.html"
+      "/posts/other/did_djs.html"
     ]
   },
   {
-    "listing": "/reviews.html",
+    "listing": "/stories.html",
     "items": [
-      "/posts/reviews/BR_BloodMeridianCormacMcCarthy.html",
-      "/posts/reviews/BR_WomenAndPowerMaryBeard.html",
-      "/posts/reviews/BR_GoodOldNeonDFW.html",
-      "/posts/reviews/BR_TheClosedCircleJC.html",
-      "/posts/reviews/FR_LVTNymph.html",
-      "/posts/reviews/PR_WansteadFlats.html",
-      "/posts/reviews/PR_BecktonPark.html"
+      "/posts/stories/STR_Alligator.html",
+      "/posts/stories/STR_TheWorldIsVeryOld.html"
     ]
   }
 ]
