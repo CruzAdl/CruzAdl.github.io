@@ -1,10 +1,32 @@
 [
   {
+    "listing": "/stories.html",
+    "items": [
+      "/posts/stories/STR_Alligator.html",
+      "/posts/stories/STR_TheWorldIsVeryOld.html"
+    ]
+  },
+  {
+    "listing": "/other.html",
+    "items": [
+      "/posts/other/did_djs.html"
+    ]
+  },
+  {
+    "listing": "/lifeslices.html",
+    "items": [
+      "/posts/lifeslices/RFRLFLT_December_2023.html",
+      "/posts/lifeslices/RFRLFLT_February_2024.html",
+      "/posts/lifeslices/RFRLFLT_January_2024.html"
+    ]
+  },
+  {
     "listing": "/parkrun.html",
     "items": [
       "/posts/reviews/PR_WansteadFlats.html",
       "/posts/reviews/PR_BecktonPark.html",
-      "/posts/reviews/PR_WansteadFlats2.html"
+      "/posts/reviews/PR_WansteadFlats2.html",
+      "/posts/reviews/PR_HighburyFields.html"
     ]
   },
   {
@@ -17,28 +39,8 @@
       "/posts/reviews/FR_LVTNymph.html",
       "/posts/reviews/PR_WansteadFlats.html",
       "/posts/reviews/PR_BecktonPark.html",
-      "/posts/reviews/PR_WansteadFlats2.html"
-    ]
-  },
-  {
-    "listing": "/lifeslices.html",
-    "items": [
-      "/posts/lifeslices/RFRLFLT_December_2023.html",
-      "/posts/lifeslices/RFRLFLT_February_2024.html",
-      "/posts/lifeslices/RFRLFLT_January_2024.html"
-    ]
-  },
-  {
-    "listing": "/other.html",
-    "items": [
-      "/posts/other/did_djs.html"
-    ]
-  },
-  {
-    "listing": "/stories.html",
-    "items": [
-      "/posts/stories/STR_Alligator.html",
-      "/posts/stories/STR_TheWorldIsVeryOld.html"
+      "/posts/reviews/PR_WansteadFlats2.html",
+      "/posts/reviews/PR_HighburyFields.html"
     ]
   }
 ]
