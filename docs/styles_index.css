@@ -74,7 +74,7 @@
 
 #posts-cell{background-image:url(media/pfbrain_tn.jpg)}
 #bookr-cell  {background-image:url(media/reviews_tn.png)}
-#stories-cell {background-image:url(media/stories_tn.png)}
+#posts-cell {background-image:url(media/posts_tn.png)}
 
 /* ─── nuke the heading underline ─────────────────────────── */
 .grid h2{          /* or .g-col-12 h2 if you prefer */
