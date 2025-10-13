@@ -1,0 +1,33 @@
+body {
+    padding: 50px;
+    color:whitesmoke;
+    background-color: black;
+}
+
+a {
+    color: red;
+}
+
+div.quarto-post.image-right {
+  margin-bottom: 0.7em;
+  border-bottom: none;
+}
+
+h3.listing-title a {
+  color: red;
+  text-decoration: underline;
+}
+
+.listing-date {
+  color: red;
+}
+
+div.listing-category {
+  color: red !important; /* The !important flag forces the style */
+}
+
+/* If the color isn't taking on the links within the categories */
+.listing-categories a {
+  color: red !important;
+}
+
