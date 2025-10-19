@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.551">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>CruzAdl - LVU50K</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="site_libs/plotly-binding-4.10.4/plotly.js"></script>
+
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+
+<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-layout-custom">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+<!-- main -->
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">LVU50K</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Run Log</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Progress?</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Blog</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="cell-output-display column-page">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-1bba62c9473caed940f2" style="width:100%;height:650px;"></div>
+<script type="application/json" data-for="htmlwidget-1bba62c9473caed940f2">{"x":{"data":[{"orientation":"v","width":[0.89999999999999858,0.90000000000000036],"base":[39.519999999999996,34.809999999999995],"x":[9,6],"y":[7.0500000000000043,10.170000000000002],"text":["Date: 2025-10-13 <br>Dist: 7.05 km<br>Pace: 4:53 /km","Date: 2025-09-22 <br>Dist: 10.17 km<br>Pace: 5:18 /km"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(114,181,242,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"1","legendgroup":"1","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.89999999999999858,0.89999999999999947],"base":[28.509999999999998,32.68],"x":[9,8],"y":[11.009999999999998,12.259999999999998],"text":["Date: 2025-10-14 <br>Dist: 11.01 km<br>Pace: 5:33 /km","Date: 2025-10-07 <br>Dist: 12.26 km<br>Pace: 5:39 /km"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(103,214,195,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"2","legendgroup":"2","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.89999999999999947,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.90000000000000036],"base":[11.219999999999999,27.140000000000001,13.57,30.399999999999999,5.0300000000000002,4.9900000000000002],"x":[8,7,6,5,4,3],"y":[21.460000000000001,16.07,21.239999999999995,16.149999999999999,15.02,11.549999999999999],"text":["Date: 2025-10-08 <br>Dist: 21.46 km<br>Pace: 5:25 /km","Date: 2025-10-01 <br>Dist: 16.07 km<br>Pace: 5:36 /km","Date: 2025-09-24 <br>Dist: 21.24 km<br>Pace: 5:35 /km","Date: 2025-09-17 <br>Dist: 16.15 km<br>Pace: 5:34 /km","Date: 2025-09-10 <br>Dist: 15.02 km<br>Pace: 5:34 /km","Date: 2025-09-03 <br>Dist: 11.55 km<br>Pace: 5:48 /km"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(149,224,113,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"3","legendgroup":"3","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.89999999999999858,0.90000000000000036],"base":[6.2699999999999996,17.02],"x":[9,7],"y":[22.239999999999998,10.120000000000001],"text":["Date: 2025-10-16 <br>Dist: 22.24 km<br>Pace: 5:23 /km","Date: 2025-10-02 <br>Dist: 10.12 km<br>Pace: 5:20 /km"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(246,211,74,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"4","legendgroup":"4","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.90000000000000036,0.90000000000000036],"base":[7.6699999999999999,12.26],"x":[7,5],"y":[9.3499999999999996,18.140000000000001],"text":["Date: 2025-10-03 <br>Dist: 9.35 km<br>Pace: 5:44 /km","Date: 2025-09-19 <br>Dist: 18.14 km<br>Pace: 5:41 /km"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,165,59,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"5","legendgroup":"5","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.89999999999999858,0.89999999999999858,0.89999999999999947,0.89999999999999947,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.90000000000000013,0.89999999999999991],"base":[0,5.0199999999999996,0,6.2599999999999998,6.4100000000000001,0,5.0499999999999998,8.5999999999999996,7.1799999999999997,0,0,0,0],"x":[9,9,8,8,7,7,7,6,5,4,3,2,1],"y":[5.0199999999999996,1.25,6.2599999999999998,4.9599999999999991,1.2599999999999998,5.0499999999999998,1.3600000000000003,4.9700000000000006,5.0800000000000001,5.0300000000000002,4.9900000000000002,5.0199999999999996,5],"text":["Date: 2025-10-18 <br>Dist: 5.02 km<br>Pace: 4:06 /km","Date: 2025-10-18 <br>Dist: 1.25 km<br>Pace: 5:37 /km","Date: 2025-10-11 <br>Dist: 6.26 km<br>Pace: 5:26 /km","Date: 2025-10-11 <br>Dist: 4.96 km<br>Pace: 4:06 /km","Date: 2025-10-04 <br>Dist: 1.26 km<br>Pace: 6:13 /km","Date: 2025-10-04 <br>Dist: 5.05 km<br>Pace: 4:13 /km","Date: 2025-10-04 <br>Dist: 1.36 km<br>Pace: 4:59 /km","Date: 2025-09-27 <br>Dist: 4.97 km<br>Pace: 4:13 /km","Date: 2025-09-20 <br>Dist: 5.08 km<br>Pace: 4:13 /km","Date: 2025-09-13 <br>Dist: 5.03 km<br>Pace: 4:14 /km","Date: 2025-09-06 <br>Dist: 4.99 km<br>Pace: 4:17 /km","Date: 2025-08-30 <br>Dist: 5.02 km<br>Pace: 4:21 /km","Date: 2025-08-23 <br>Dist: 5 km<br>Pace: 4:22 /km"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,112,154,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"6","legendgroup":"6","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.90000000000000036,0.90000000000000036],"base":[0,0],"x":[6,5],"y":[8.5999999999999996,7.1799999999999997],"text":["Date: 2025-09-28 <br>Dist: 8.6 km<br>Pace: 5:49 /km","Date: 2025-09-21 <br>Dist: 7.18 km<br>Pace: 6:37 /km"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(211,135,226,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"7","legendgroup":"7","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[9,8,7,6,5,4,3,2,1],"y":[46.57,44.939999999999998,43.210000000000001,44.979999999999997,46.549999999999997,20.050000000000001,16.539999999999999,5.0199999999999996,5],"text":[46.600000000000001,44.899999999999999,43.200000000000003,45,46.5,20,16.5,5,5],"hovertext":["","","","","","","","",""],"textfont":{"size":11.338582677165356,"color":"rgba(0,0,0,1)"},"type":"scatter","mode":"text","hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.89999999999999858,0.90000000000000036],"base":[208.39500000079474,189.66666666666666],"x":[9,6],"y":[34.416666666666657,53.950000000000017],"text":["Date: 2025-10-13 <br>Time: 00:34:25.0","Date: 2025-09-22 <br>Time: 00:53:57.0"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(114,181,242,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"1","legendgroup":"1","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.89999999999999858,0.89999999999999947],"base":[147.27833333412806,170.46666666666667],"x":[9,8],"y":[61.116666666666674,69.216666666666669],"text":["Date: 2025-10-14 <br>Time: 01:01:07.0","Date: 2025-10-07 <br>Time: 01:09:13.0"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(103,214,195,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"2","legendgroup":"2","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.89999999999999947,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.90000000000000036],"base":[54.333333333333336,143.45166666507723,70.950000000000003,172.16666666666669,21.283333333333335,21.399999999999999],"x":[8,7,6,5,4,3],"y":[116.13333333333333,90.083333333333314,118.71666666666665,89.866666666666674,83.61666666666666,66.966666666666669],"text":["Date: 2025-10-08 <br>Time: 01:56:08.0","Date: 2025-10-01 <br>Time: 01:30:05.0","Date: 2025-09-24 <br>Time: 01:58:43.0","Date: 2025-09-17 <br>Time: 01:29:52.0","Date: 2025-09-10 <br>Time: 01:23:37.0","Date: 2025-09-03 <br>Time: 01:06:58.0"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(149,224,113,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"3","legendgroup":"3","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.89999999999999858,0.90000000000000036],"base":[27.595000000794727,89.468333331743878],"x":[9,7],"y":[119.68333333333334,53.983333333333348],"text":["Date: 2025-10-16 <br>Time: 01:59:41.0","Date: 2025-10-02 <br>Time: 00:53:59.0"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(246,211,74,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"4","legendgroup":"4","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.90000000000000036,0.90000000000000036],"base":[35.901666665077208,69],"x":[7,5],"y":[53.56666666666667,103.16666666666669],"text":["Date: 2025-10-03 <br>Time: 00:53:34.0","Date: 2025-09-19 <br>Time: 01:43:10.0"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,165,59,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"5","legendgroup":"5","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.89999999999999858,0.89999999999999858,0.89999999999999947,0.89999999999999947,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.90000000000000036,0.90000000000000013,0.89999999999999991],"base":[0,20.583333333333332,0,33.983333333333334,21.300000000000001,0,29.134999998410542,50.033333333333331,47.56666666666667,0,0,0,0],"x":[9,9,8,8,7,7,7,6,5,4,3,2,1],"y":[20.583333333333332,7.0116666674613946,33.983333333333334,20.350000000000001,7.8349999984105416,21.300000000000001,6.7666666666666657,20.916666666666671,21.43333333333333,21.283333333333335,21.399999999999999,21.816666666666666,21.800000000000001],"text":["Date: 2025-10-18 <br>Time: 00:20:35.0","Date: 2025-10-18 <br>Time: 00:07:00.7","Date: 2025-10-11 <br>Time: 00:33:59.0","Date: 2025-10-11 <br>Time: 00:20:21.0","Date: 2025-10-04 <br>Time: 00:07:50.1","Date: 2025-10-04 <br>Time: 00:21:18.0","Date: 2025-10-04 <br>Time: 00:06:46.0","Date: 2025-09-27 <br>Time: 00:20:55.0","Date: 2025-09-20 <br>Time: 00:21:26.0","Date: 2025-09-13 <br>Time: 00:21:17.0","Date: 2025-09-06 <br>Time: 00:21:24.0","Date: 2025-08-30 <br>Time: 00:21:49.0","Date: 2025-08-23 <br>Time: 00:21:48.0"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,112,154,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"6","legendgroup":"6","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.90000000000000036,0.90000000000000036],"base":[0,0],"x":[6,5],"y":[50.033333333333331,47.56666666666667],"text":["Date: 2025-09-28 <br>Time: 00:50:02.0","Date: 2025-09-21 <br>Time: 00:47:34.0"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(211,135,226,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"7","legendgroup":"7","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[9,8,7,6,5,4,3,2,1],"y":[242.8116666674614,239.68333333333334,233.53499999841054,243.61666666666667,262.03333333333336,104.89999999999999,88.366666666666674,21.816666666666666,21.800000000000001],"text":[243,240,234,244,262,105,88,22,22],"hovertext":["","","","","","","","",""],"textfont":{"size":11.338582677165356,"color":"rgba(0,0,0,1)"},"type":"scatter","mode":"text","hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y2","hoverinfo":"text","frame":null}],"layout":{"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,9.5999999999999996],"tickmode":"array","ticktext":["-W34","-W35","-W36","-W37","-W38","-W39","-W40","-W41","-W42"],"tickvals":[1,2,3,4,5,6,6.9999999999999991,8,9],"categoryorder":"array","categoryarray":["-W34","-W35","-W36","-W37","-W38","-W39","-W40","-W41","-W42"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":10},"tickangle":-90,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y2","title":{"text":"Week","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"standoff":20},"hoverformat":".2f"},"yaxis2":{"domain":[0,0.47999999999999998],"automargin":true,"type":"linear","autorange":false,"range":[-13.101666666666668,275.13500000000005],"tickmode":"array","ticktext":["0","100","200"],"tickvals":[0,100,200],"categoryorder":"array","categoryarray":["0","100","200"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Time (minutes)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0.52000000000000002,1],"automargin":true,"type":"linear","autorange":false,"range":[-2.3285,48.898499999999999],"tickmode":"array","ticktext":["0","10","20","30","40"],"tickvals":[0,10,20,30,40],"categoryorder":"array","categoryarray":["0","10","20","30","40"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Distance (km)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"annotations":[],"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0.52000000000000002,"y1":1},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":0.47999999999999998}],"images":[],"margin":{"t":26.228310502283104,"r":7.3059360730593621,"b":80,"l":43.105022831050235},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"orientation":"h","x":0.40000000000000002,"y":1.1000000000000001},"hovermode":"closest","barmode":"relative"},"attrs":{"49a04bf55d5f":{"x":{},"y":{},"fill":{},"text":{},"type":"bar"},"49a01625335":{"x":{},"y":{},"label":{}},"49a042261046":{"x":{},"y":{},"fill":{},"text":{},"type":"bar"},"49a056a26945":{"x":{},"y":{},"label":{}}},"source":"A","config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="cell-output-display column-page">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-a3eec93c2932644aa441" style="width:100%;height:650px;"></div>
+<script type="application/json" data-for="htmlwidget-a3eec93c2932644aa441">{"x":{"data":[{"x":[-5.5666666666666664,-4.2333333333333334,-5.583333333333333,-4.3166666666666664,-5.7999999999999998,-4.3499999999999996,-4.3666666666666663],"y":[161,188,164,189,167,194,187],"text":["Date: 2025-09-17 <br>Dist: 16.1 km<br>Pace: 00:05:34 /km<br>HR: 161 bpm","Date: 2025-09-13 <br>Dist: 5 km<br>Pace: 00:04:14 /km<br>HR: 188 bpm","Date: 2025-09-10 <br>Dist: 15 km<br>Pace: 00:05:35 /km<br>HR: 164 bpm","Date: 2025-09-06 <br>Dist: 5 km<br>Pace: 00:04:19 /km<br>HR: 189 bpm","Date: 2025-09-03 <br>Dist: 11.6 km<br>Pace: 00:05:48 /km<br>HR: 167 bpm","Date: 2025-08-30 <br>Dist: 5 km<br>Pace: 00:04:21 /km<br>HR: 194 bpm","Date: 2025-08-23 <br>Dist: 5 km<br>Pace: 00:04:22 /km<br>HR: 187 bpm"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":0.69999999999999996,"size":[19.701410831646825,11.799025890851953,19.085758848907307,11.756481832991252,17.017452485011077,11.788411063788232,11.767139091282637],"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"PF-recovery into training","legendgroup":"PF-recovery into training","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-4.0999999999999996,-5.5999999999999996,-5.3833333333333337,-5.5499999999999998,-4.9000000000000004,-5.4500000000000002,-4.1166666666666663,-5.416666666666667,-5.6500000000000004,-6.2166666666666668,-4.2333333333333334,-5.0499999999999998,-5.7333333333333334,-5.333333333333333,-5.6166666666666663,-5.833333333333333,-4.2333333333333334,-5.5999999999999996,-5.3166666666666664,-6.6500000000000004,-4.2166666666666668,-5.7000000000000002],"y":[186,147,161,160,165,163,188,160,159,148,185,160,157,169,160,157,187,156,159,144,191,172],"text":["Date: 2025-10-18 <br>Dist: 5 km<br>Pace: 00:04:06 /km<br>HR: 186 bpm","Date: 2025-10-18 <br>Dist: 1.2 km<br>Pace: 00:05:36 /km<br>HR: 147 bpm","Date: 2025-10-16 <br>Dist: 22.2 km<br>Pace: 00:05:23 /km<br>HR: 161 bpm","Date: 2025-10-14 <br>Dist: 11 km<br>Pace: 00:05:33 /km<br>HR: 160 bpm","Date: 2025-10-13 <br>Dist: 7 km<br>Pace: 00:04:54 /km<br>HR: 165 bpm","Date: 2025-10-11 <br>Dist: 6.3 km<br>Pace: 00:05:27 /km<br>HR: 163 bpm","Date: 2025-10-11 <br>Dist: 5 km<br>Pace: 00:04:07 /km<br>HR: 188 bpm","Date: 2025-10-08 <br>Dist: 21.5 km<br>Pace: 00:05:25 /km<br>HR: 160 bpm","Date: 2025-10-07 <br>Dist: 12.3 km<br>Pace: 00:05:39 /km<br>HR: 159 bpm","Date: 2025-10-04 <br>Dist: 1.3 km<br>Pace: 00:06:13 /km<br>HR: 148 bpm","Date: 2025-10-04 <br>Dist: 5 km<br>Pace: 00:04:14 /km<br>HR: 185 bpm","Date: 2025-10-04 <br>Dist: 1.4 km<br>Pace: 00:05:03 /km<br>HR: 160 bpm","Date: 2025-10-03 <br>Dist: 9.3 km<br>Pace: 00:05:44 /km<br>HR: 157 bpm","Date: 2025-10-02 <br>Dist: 10.1 km<br>Pace: 00:05:20 /km<br>HR: 169 bpm","Date: 2025-10-01 <br>Dist: 16.1 km<br>Pace: 00:05:37 /km<br>HR: 160 bpm","Date: 2025-09-28 <br>Dist: 8.6 km<br>Pace: 00:05:50 /km<br>HR: 157 bpm","Date: 2025-09-27 <br>Dist: 5 km<br>Pace: 00:04:14 /km<br>HR: 187 bpm","Date: 2025-09-24 <br>Dist: 21.2 km<br>Pace: 00:05:36 /km<br>HR: 156 bpm","Date: 2025-09-22 <br>Dist: 10.2 km<br>Pace: 00:05:19 /km<br>HR: 159 bpm","Date: 2025-09-21 <br>Dist: 7.2 km<br>Pace: 00:06:39 /km<br>HR: 144 bpm","Date: 2025-09-20 <br>Dist: 5.1 km<br>Pace: 00:04:13 /km<br>HR: 191 bpm","Date: 2025-09-19 <br>Dist: 18.1 km<br>Pace: 00:05:42 /km<br>HR: 172 bpm"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":0.69999999999999996,"size":[11.788411063788232,3.7795275590551185,22.677165354330711,16.665767401410935,13.713324957709732,13.012045587975404,11.724424284913157,22.322717984102141,17.466108210846002,4.1920060449256713,11.820213505932061,5.1475639307816543,15.518871069571876,16.064186718286152,19.658609992734558,14.962183704173643,11.73512448737268,22.221514006041303,16.098762241656519,13.824035076823026,11.851890657939023,20.73133951842814],"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"LVU50K 1: Base","legendgroup":"LVU50K 1: Base","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-5.7999999999999998,-5.7801687763713074,-5.7603375527426159,-5.7405063291139236,-5.7206751054852321,-5.7008438818565397,-5.6810126582278482,-5.6611814345991558,-5.6413502109704643,-5.6215189873417719,-5.6016877637130804,-5.581856540084388,-5.5620253164556956,-5.5421940928270041,-5.5223628691983118,-5.5025316455696203,-5.4827004219409279,-5.4628691983122364,-5.443037974683544,-5.4232067510548525,-5.4033755274261601,-5.3835443037974686,-5.3637130801687762,-5.3438818565400847,-5.3240506329113924,-5.3042194092827,-5.2843881856540085,-5.2645569620253161,-5.2447257383966246,-5.2248945147679322,-5.2050632911392407,-5.1852320675105483,-5.1654008438818568,-5.1455696202531644,-5.1257383966244721,-5.1059071729957806,-5.0860759493670891,-5.0662447257383967,-5.0464135021097043,-5.0265822784810128,-5.0067510548523204,-4.9869198312236289,-4.9670886075949365,-4.947257383966245,-4.9274261603375527,-4.9075949367088612,-4.8877637130801688,-4.8679324894514764,-4.8481012658227849,-4.8282700421940925,-4.808438818565401,-4.7886075949367086,-4.7687763713080171,-4.7489451476793247,-4.7291139240506332,-4.7092827004219409,-4.6894514767932485,-4.669620253164557,-4.6497890295358655,-4.6299578059071731,-4.6101265822784807,-4.5902953586497892,-4.5704641350210968,-4.5506329113924053,-4.5308016877637129,-4.5109704641350215,-4.4911392405063291,-4.4713080168776376,-4.4514767932489452,-4.4316455696202528,-4.4118143459915613,-4.3919831223628698,-4.3721518987341774,-4.352320675105485,-4.3324894514767935,-4.3126582278481012,-4.2928270042194097,-4.2729957805907173,-4.2531645569620258,-4.2333333333333334],"y":[161.63261036960984,162.00097942063266,162.36934847165543,162.73771752267822,163.10608657370102,163.47445562472382,163.84282467574661,164.21119372676941,164.5795627777922,164.947931828815,165.3163008798378,165.68466993086059,166.05303898188339,166.42140803290619,166.78977708392898,167.15814613495178,167.52651518597457,167.89488423699737,168.26325328802017,168.63162233904296,168.99999139006576,169.36836044108856,169.73672949211135,170.10509854313415,170.47346759415694,170.84183664517974,171.21020569620254,171.57857474722533,171.94694379824813,172.31531284927092,172.68368190029372,173.05205095131652,173.42042000233931,173.78878905336211,174.15715810438491,174.5255271554077,174.89389620643047,175.26226525745329,175.63063430847609,175.99900335949889,176.36737241052168,176.73574146154448,177.10411051256727,177.47247956359004,177.84084861461287,178.20921766563563,178.57758671665846,178.94595576768126,179.31432481870402,179.68269386972685,180.05106292074962,180.41943197177244,180.78780102279521,181.156170073818,181.5245391248408,181.8929081758636,182.26127722688642,182.62964627790919,182.99801532893196,183.36638437995478,183.73475343097758,184.10312248200037,184.47149153302317,184.83986058404594,185.20822963506876,185.57659868609153,185.94496773711435,186.31333678813712,186.68170583915992,187.05007489018274,187.41844394120551,187.78681299222831,188.1551820432511,188.5235510942739,188.89192014529669,189.26028919631949,189.62865824734229,189.99702729836508,190.36539634938788,190.73376540041068],"text":"","type":"scatter","mode":"lines","name":"PF-recovery into training","line":{"width":3.7795275590551185,"color":"rgba(248,118,109,1)","dash":"solid"},"hoveron":"points","legendgroup":"PF-recovery into training","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[-6.6500000000000004,-6.6177215189873424,-6.5854430379746836,-6.5531645569620256,-6.5208860759493676,-6.4886075949367088,-6.4563291139240508,-6.4240506329113929,-6.391772151898734,-6.3594936708860761,-6.3272151898734181,-6.2949367088607602,-6.2626582278481013,-6.2303797468354434,-6.1981012658227854,-6.1658227848101266,-6.1335443037974686,-6.1012658227848107,-6.0689873417721518,-6.0367088607594939,-6.0044303797468359,-5.9721518987341771,-5.9398734177215191,-5.9075949367088612,-5.8753164556962023,-5.8430379746835444,-5.8107594936708864,-5.7784810126582276,-5.7462025316455696,-5.7139240506329116,-5.6816455696202528,-5.6493670886075948,-5.6170886075949369,-5.584810126582278,-5.5525316455696201,-5.5202531645569621,-5.4879746835443033,-5.4556962025316453,-5.4234177215189874,-5.3911392405063285,-5.3588607594936706,-5.3265822784810126,-5.2943037974683538,-5.2620253164556958,-5.2297468354430379,-5.197468354430379,-5.1651898734177211,-5.1329113924050631,-5.1006329113924043,-5.0683544303797463,-5.0360759493670884,-5.0037974683544304,-4.9715189873417716,-4.9392405063291136,-4.9069620253164556,-4.8746835443037977,-4.8424050632911388,-4.8101265822784809,-4.7778481012658229,-4.7455696202531641,-4.7132911392405061,-4.6810126582278482,-4.6487341772151893,-4.6164556962025314,-4.5841772151898734,-4.5518987341772146,-4.5196202531645566,-4.4873417721518987,-4.4550632911392398,-4.4227848101265819,-4.3905063291139239,-4.3582278481012651,-4.3259493670886071,-4.2936708860759492,-4.2613924050632903,-4.2291139240506324,-4.1968354430379744,-4.1645569620253156,-4.1322784810126576,-4.0999999999999996],"y":[140.06877824058404,140.65540446506071,141.24203068953744,141.82865691401412,142.41528313849079,143.00190936296752,143.5885355874442,144.1751618119209,144.7617880363976,145.34841426087428,145.93504048535098,146.52166670982768,147.10829293430439,147.69491915878109,148.28154538325776,148.86817160773447,149.45479783221117,150.04142405668784,150.62805028116458,151.21467650564125,151.80130273011792,152.38792895459466,152.97455517907133,153.56118140354803,154.14780762802474,154.73443385250144,155.32106007697814,155.90768630145482,156.49431252593152,157.08093875040822,157.66756497488493,158.25419119936163,158.8408174238383,159.42744364831501,160.01406987279171,160.60069609726838,161.18732232174511,161.77394854622179,162.36057477069846,162.94720099517519,163.53382721965187,164.12045344412857,164.70707966860527,165.29370589308195,165.88033211755868,166.46695834203535,167.05358456651206,167.64021079098876,168.22683701546546,168.81346323994217,169.40008946441884,169.98671568889552,170.57334191337225,171.15996813784892,171.74659436232562,172.33322058680233,172.919846811279,173.5064730357557,174.09309926023241,174.67972548470911,175.26635170918581,175.85297793366249,176.43960415813922,177.02623038261589,177.61285660709257,178.1994828315693,178.78610905604597,179.37273528052268,179.95936150499938,180.54598772947605,181.13261395395276,181.71924017842946,182.30586640290616,182.89249262738286,183.47911885185954,184.06574507633624,184.65237130081294,185.23899752528965,185.82562374976635,186.41224997424303],"text":"","type":"scatter","mode":"lines","name":"LVU50K 1: Base","line":{"width":3.7795275590551185,"color":"rgba(0,191,196,1)","dash":"solid"},"hoveron":"points","legendgroup":"LVU50K 1: Base","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[20348,20344,20341,20337,20334,20330,20323],"y":[8.9623333333333335,7.9586666666666668,9.1566666666666663,8.1584999999999983,9.6859999999999999,8.4390000000000001,8.1656666666666666],"text":["Date: 2025-09-17 <br>Efficiency: 8.96 <br>Pace: 00:05:34 /km<br>HR: 161 bpm","Date: 2025-09-13 <br>Efficiency: 7.96 <br>Pace: 00:04:14 /km<br>HR: 188 bpm","Date: 2025-09-10 <br>Efficiency: 9.16 <br>Pace: 00:05:35 /km<br>HR: 164 bpm","Date: 2025-09-06 <br>Efficiency: 8.16 <br>Pace: 00:04:19 /km<br>HR: 189 bpm","Date: 2025-09-03 <br>Efficiency: 9.69 <br>Pace: 00:05:48 /km<br>HR: 167 bpm","Date: 2025-08-30 <br>Efficiency: 8.44 <br>Pace: 00:04:21 /km<br>HR: 194 bpm","Date: 2025-08-23 <br>Efficiency: 8.17 <br>Pace: 00:04:22 /km<br>HR: 187 bpm"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":0.5,"size":3.7795275590551185,"symbol":"circle-open","line":{"width":1.8897637795275593,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"PF-recovery into training","legendgroup":"PF-recovery into training","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[20379,20379,20377,20375,20374,20372,20372,20369,20368,20365,20365,20365,20364,20363,20362,20359,20358,20355,20353,20352,20351,20350],"y":[7.6259999999999994,8.2319999999999993,8.6671666666666667,8.8800000000000008,8.0850000000000009,8.8834999999999997,7.7393333333333327,8.6666666666666679,8.9834999999999994,9.2006666666666668,7.8316666666666661,8.0800000000000001,9.0013333333333332,9.0133333333333319,8.9866666666666664,9.1583333333333332,7.9163333333333332,8.7359999999999989,8.4534999999999982,9.5760000000000005,8.0538333333333334,9.8040000000000003],"text":["Date: 2025-10-18 <br>Efficiency: 7.63 <br>Pace: 00:04:06 /km<br>HR: 186 bpm","Date: 2025-10-18 <br>Efficiency: 8.23 <br>Pace: 00:05:36 /km<br>HR: 147 bpm","Date: 2025-10-16 <br>Efficiency: 8.67 <br>Pace: 00:05:23 /km<br>HR: 161 bpm","Date: 2025-10-14 <br>Efficiency: 8.88 <br>Pace: 00:05:33 /km<br>HR: 160 bpm","Date: 2025-10-13 <br>Efficiency: 8.09 <br>Pace: 00:04:54 /km<br>HR: 165 bpm","Date: 2025-10-11 <br>Efficiency: 8.88 <br>Pace: 00:05:27 /km<br>HR: 163 bpm","Date: 2025-10-11 <br>Efficiency: 7.74 <br>Pace: 00:04:07 /km<br>HR: 188 bpm","Date: 2025-10-08 <br>Efficiency: 8.67 <br>Pace: 00:05:25 /km<br>HR: 160 bpm","Date: 2025-10-07 <br>Efficiency: 8.98 <br>Pace: 00:05:39 /km<br>HR: 159 bpm","Date: 2025-10-04 <br>Efficiency: 9.2 <br>Pace: 00:06:13 /km<br>HR: 148 bpm","Date: 2025-10-04 <br>Efficiency: 7.83 <br>Pace: 00:04:14 /km<br>HR: 185 bpm","Date: 2025-10-04 <br>Efficiency: 8.08 <br>Pace: 00:05:03 /km<br>HR: 160 bpm","Date: 2025-10-03 <br>Efficiency: 9 <br>Pace: 00:05:44 /km<br>HR: 157 bpm","Date: 2025-10-02 <br>Efficiency: 9.01 <br>Pace: 00:05:20 /km<br>HR: 169 bpm","Date: 2025-10-01 <br>Efficiency: 8.99 <br>Pace: 00:05:37 /km<br>HR: 160 bpm","Date: 2025-09-28 <br>Efficiency: 9.16 <br>Pace: 00:05:50 /km<br>HR: 157 bpm","Date: 2025-09-27 <br>Efficiency: 7.92 <br>Pace: 00:04:14 /km<br>HR: 187 bpm","Date: 2025-09-24 <br>Efficiency: 8.74 <br>Pace: 00:05:36 /km<br>HR: 156 bpm","Date: 2025-09-22 <br>Efficiency: 8.45 <br>Pace: 00:05:19 /km<br>HR: 159 bpm","Date: 2025-09-21 <br>Efficiency: 9.58 <br>Pace: 00:06:39 /km<br>HR: 144 bpm","Date: 2025-09-20 <br>Efficiency: 8.05 <br>Pace: 00:04:13 /km<br>HR: 191 bpm","Date: 2025-09-19 <br>Efficiency: 9.8 <br>Pace: 00:05:42 /km<br>HR: 172 bpm"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":0.5,"size":3.7795275590551185,"symbol":"circle-open","line":{"width":1.8897637795275593,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"LVU50K 1: Base","legendgroup":"LVU50K 1: Base","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[20323,20323.316455696204,20323.632911392404,20323.949367088608,20324.265822784811,20324.582278481012,20324.898734177215,20325.215189873419,20325.531645569619,20325.848101265823,20326.164556962027,20326.481012658227,20326.797468354431,20327.113924050635,20327.430379746835,20327.746835443038,20328.063291139242,20328.379746835442,20328.696202531646,20329.01265822785,20329.32911392405,20329.645569620254,20329.962025316454,20330.278481012658,20330.594936708861,20330.911392405062,20331.227848101265,20331.544303797469,20331.860759493669,20332.177215189873,20332.493670886077,20332.810126582277,20333.126582278481,20333.443037974685,20333.759493670885,20334.075949367088,20334.392405063292,20334.708860759492,20335.025316455696,20335.3417721519,20335.6582278481,20335.974683544304,20336.291139240508,20336.607594936708,20336.924050632912,20337.240506329115,20337.556962025315,20337.873417721519,20338.189873417723,20338.506329113923,20338.822784810127,20339.139240506331,20339.455696202531,20339.772151898735,20340.088607594938,20340.405063291139,20340.721518987342,20341.037974683546,20341.354430379746,20341.67088607595,20341.98734177215,20342.303797468354,20342.620253164558,20342.936708860758,20343.253164556962,20343.569620253165,20343.886075949365,20344.202531645569,20344.518987341773,20344.835443037973,20345.151898734177,20345.468354430381,20345.784810126581,20346.101265822785,20346.417721518988,20346.734177215189,20347.050632911392,20347.367088607596,20347.683544303796,20348],"y":[8.4667358040745739,8.4708882391510656,8.4750406742275572,8.4791931093041057,8.4833455443806542,8.4874979794570891,8.4916504145336376,8.4958028496101861,8.4999552846866777,8.5041077197631694,8.5082601548397179,8.5124125899162095,8.516565024992758,8.5207174600692497,8.5248698951457413,8.5290223302222898,8.5331747652987815,8.5373272003752732,8.5414796354518217,8.5456320705283701,8.5497845056048618,8.5539369406813535,8.5580893757578451,8.5622418108343936,8.5663942459108853,8.5705466809873769,8.5746991160639254,8.5788515511404739,8.5830039862169087,8.5871564212934572,8.5913088563700057,8.5954612914464974,8.5996137265229891,8.6037661615995376,8.6079185966760292,8.6120710317525777,8.6162234668290694,8.620375901905561,8.6245283369821095,8.628680772058658,8.6328332071350928,8.6369856422116413,8.6411380772881898,8.6452905123646815,8.6494429474411731,8.6535953825177216,8.6577478175942133,8.661900252670705,8.6660526877472535,8.6702051228237451,8.6743575579002936,8.6785099929767853,8.6826624280532769,8.6868148631298254,8.6909672982063739,8.6951197332828087,8.6992721683593572,8.7034246034359057,8.7075770385123974,8.7117294735888891,8.7158819086653807,8.7200343437419292,8.7241867788184777,8.7283392138949125,8.732491648971461,8.7366440840480095,8.7407965191245012,8.7449489542009928,8.7491013892775413,8.753253824354033,8.7574062594305815,8.7615586945070731,8.7657111295835648,8.7698635646601133,8.774015999736605,8.7781684348130966,8.7823208698896451,8.7864733049661936,8.7906257400426853,8.7947781751191769],"text":"","type":"scatter","mode":"lines","name":"PF-recovery into training","line":{"width":3.7795275590551185,"color":"rgba(248,118,109,1)","dash":"solid"},"hoveron":"points","legendgroup":"PF-recovery into training","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null},{"x":[20350,20350.367088607596,20350.734177215189,20351.101265822785,20351.468354430381,20351.835443037973,20352.202531645569,20352.569620253165,20352.936708860758,20353.303797468354,20353.67088607595,20354.037974683546,20354.405063291139,20354.772151898735,20355.139240506331,20355.506329113923,20355.873417721519,20356.240506329115,20356.607594936708,20356.974683544304,20357.3417721519,20357.708860759492,20358.075949367088,20358.443037974685,20358.810126582277,20359.177215189873,20359.544303797469,20359.911392405062,20360.278481012658,20360.645569620254,20361.01265822785,20361.379746835442,20361.746835443038,20362.113924050635,20362.481012658227,20362.848101265823,20363.215189873419,20363.582278481012,20363.949367088608,20364.316455696204,20364.683544303796,20365.050632911392,20365.417721518988,20365.784810126581,20366.151898734177,20366.518987341773,20366.886075949365,20367.253164556962,20367.620253164558,20367.98734177215,20368.354430379746,20368.721518987342,20369.088607594938,20369.455696202531,20369.822784810127,20370.189873417723,20370.556962025315,20370.924050632912,20371.291139240508,20371.6582278481,20372.025316455696,20372.392405063292,20372.759493670885,20373.126582278481,20373.493670886077,20373.860759493669,20374.227848101265,20374.594936708861,20374.962025316454,20375.32911392405,20375.696202531646,20376.063291139242,20376.430379746835,20376.797468354431,20377.164556962027,20377.531645569619,20377.898734177215,20378.265822784811,20378.632911392404,20379],"y":[9.0031362412491944,8.9936007341361801,8.9840652270232795,8.9745297199102652,8.9649942127971372,8.9554587056842365,8.9459231985712222,8.9363876914582079,8.9268521843451936,8.9173166772321792,8.9077811701191649,8.8982456630060369,8.8887101558931363,8.879174648780122,8.8696391416671077,8.8601036345540933,8.850568127441079,8.8410326203280647,8.8314971132150504,8.8219616061020361,8.8124260989890217,8.8028905918761211,8.7933550847629931,8.7838195776499788,8.7742840705370782,8.7647485634240638,8.7552130563109358,8.7456775491980352,8.7361420420850209,8.7266065349718929,8.7170710278588786,8.7075355207459779,8.6980000136329636,8.6884645065198356,8.678928999406935,8.6693934922939206,8.6598579851809063,8.650322478067892,8.6407869709548777,8.6312514638418634,8.6217159567288491,8.6121804496158347,8.6026449425028204,8.5931094353899198,8.5835739282767918,8.5740384211637775,8.5645029140508768,8.5549674069377488,8.5454318998247345,8.5358963927118339,8.5263608855988196,8.5168253784856915,8.5072898713726772,8.4977543642597766,8.4882188571467623,8.4786833500336343,8.4691478429207336,8.4596123358077193,8.450076828694705,8.4405413215816907,8.4310058144686764,8.421470307355662,8.4119348002426477,8.4023992931296334,8.3928637860166191,8.3833282789036048,8.3737927717905905,8.3642572646775761,8.3547217575646755,8.3451862504515475,8.3356507433385332,8.3261152362255189,8.3165797291126182,8.3070442219994902,8.2975087148864759,8.2879732077735753,8.2784377006605609,8.2689021935474329,8.2593666864345323,8.249831179321518],"text":"","type":"scatter","mode":"lines","name":"LVU50K 1: Base","line":{"width":3.7795275590551185,"color":"rgba(0,191,196,1)","dash":"solid"},"hoveron":"points","legendgroup":"LVU50K 1: Base","showlegend":false,"xaxis":"x2","yaxis":"y2","hoverinfo":"text","frame":null}],"layout":{"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-6.7775000000000007,-3.9724999999999997],"tickmode":"array","ticktext":["4","5","6"],"tickvals":[-4,-5,-6],"categoryorder":"array","categoryarray":["4","5","6"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","hoverformat":".2f"},"xaxis2":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[20320.200000000001,20381.799999999999],"tickmode":"array","ticktext":["Sep 01","Sep 15","Oct 01","Oct 15"],"tickvals":[20332,20346,20362,20376],"categoryorder":"array","categoryarray":["Sep 01","Sep 15","Oct 01","Oct 15"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y2","hoverformat":".2f"},"yaxis2":{"domain":[0,0.28000000000000003],"automargin":true,"type":"linear","autorange":false,"range":[7.5170999999999992,9.9129000000000005],"tickmode":"array","ticktext":["8.0","8.5","9.0","9.5"],"tickvals":[8,8.5,9,9.5],"categoryorder":"array","categoryarray":["8.0","8.5","9.0","9.5"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x2","title":{"text":"(Pace x HR)/100","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0.32000000000000006,1],"automargin":true,"type":"linear","autorange":false,"range":[137.37221715261325,196.69656108797079],"tickmode":"array","ticktext":["140","160","180"],"tickvals":[140,160,180],"categoryorder":"array","categoryarray":["140","160","180"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Average Heart Rate (bpm)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"annotations":[],"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0.32000000000000006,"y1":1},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":0.28000000000000003}],"images":[],"margin":{"t":26.228310502283104,"r":7.3059360730593621,"b":40.182648401826491,"l":43.105022831050235},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"attrs":{"49a01e632257":{"x":{},"y":{},"colour":{},"size":{},"text":{},"type":"scatter"},"49a0322df07":{"x":{},"y":{},"colour":{}},"49a0ecf5aec":{"x":{},"y":{},"colour":{},"text":{},"type":"scatter"},"49a05a8850c9":{"x":{},"y":{},"colour":{}}},"source":"A","config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>(19-10-2025) THe visualisations have reached their final form. I had two gels in the last long run, it does make a big difference. The training is working. It will be interesting to run at elevation next week. The new plots show the weekly mileage/time with hover to see individual runs, not as pretty as waterfall but more compact. The other tab shows physiological adaptation I hope. With lower HR for same pace runs as training Phases advance. I cannot figure out how to get perfect tick and axis labels.</p>
+<p>(08-10-2025) Training is going well, I am running 3 to 4 times a week with no pain in either leg or foot. I am still cycling to work sometimes, I have even tried running to work, this is probably the most tryhard thing I have done in a long time. It is nice in the early morning it is not nice at rush-hour in the evening. I made some initial purchases for this new hobby, a small running backpack for the aforementioned runs to work even though the Osprey Nebula works surprisingly well it is too big. I got shorts with large mesh pockets to carry a flask and food, and a selection of different types of foods from Kendal Mint Company, surprisingly okay with their very minty cakes, have not tried the gels yet. I made an entire self contained app to visualise runs, heart rate stuff and sleep but I won’t integrate it here yet.</p>
+<p>(27-09-2025) Added some waterfall plots to visualize weekly mileage and time spend running, also a not very useful average and sum by weekday.</p>
+<p>(25/09/2025) I have signed up to the Lea Valley ultra-marathon. Ultra-marathon covers any distance over 42.195, meaning that most people that have run a marathon, have in fact run an ultra-marathon, well done guys. Call yourselves ultra-marathon finishers, its cooler. Anyway, The Lea Valley Ultra is a 50 km (31 miles) race from from Welwyn Garden City in Hertfordshire to Hackney Wick in East London.</p>
+<p>I am not sure what this page will contain, probably visualisations, some descriptive statistics on my training. Maybe ideas about strength training, gear and nutrition (something I have never had to worry about, the longest I’ve ever run in one go is 22km). Right now I am thinking how to best organise the data for myself.</p>
+</div>
+</div>
+</div>
+
+
+
+
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
