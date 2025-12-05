@@ -70,11 +70,13 @@
 
 /* ─── image assignment (ONE place) ───────────────────────── */
 #blog-cell   {background-image:url(media/zines_tn.png)}
-#parkrun-cell{background-image:url(media/parkruns_tn.png)}
 
+#parkrun-cell{background-image:url(media/parkruns_tn.png)}
+#LVU50K-cell {background-image:url(media/turtle_trail.png)}
+
+#appsgames-cell{background-image:url(media/pfbrain_tn.jpg)}
 #posts-cell{background-image:url(media/pfbrain_tn.jpg)}
 #bookr-cell  {background-image:url(media/reviews_tn.png)}
-#posts-cell {background-image:url(media/posts_tn.png)}
 
 /* ─── nuke the heading underline ─────────────────────────── */
 .grid h2{          /* or .g-col-12 h2 if you prefer */
