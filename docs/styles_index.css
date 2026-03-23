@@ -1,8 +1,8 @@
 /* ─── palette ─────────────────────────────────────────────── */
 :root{
-  --cell-bg:#000;          /* background colour behind image   */
-  --cell-br:#ccc;          /* thin border                       */
-  --txt    :#c00;          /* your red                          */
+  --cell-bg:#000;          
+  --cell-br:#ccc;          
+  --txt    :#c00;          
 }
 
 /* ─── grid basics ─────────────────────────────────────────── */
@@ -17,70 +17,87 @@
 /* ─── cell shell ──────────────────────────────────────────── */
 .grid-cell{
   position:relative;
-  min-height:250px;
   border:2px solid var(--cell-br);
-  background:var(--cell-bg);
+  background-color:var(--cell-bg);
   box-sizing:border-box;
   text-align:center;
   overflow:hidden;
-  padding:1em;
-  color:inherit;
-  background-size: contain;   /* show whole image */
+  padding:1em; 
+  color:#fff; 
+  background-size: cover; 
   background-position: center;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; 
+  
+  /* FIXED RATIO, SMALLER SIZE */
+  width: 100%;
+  max-width: 450px;       
+  aspect-ratio: 16 / 9;   
+  margin-inline: auto;
 }
 
 /* ─── full-tile link ─────────────────────────────────────── */
-.cell-link{position:relative;}              /* containing block    */
+.cell-link{position:relative;}              
 .cell-link a{
   position:absolute;
-  inset:0;                                  /* fill the cell       */
+  inset:0;                                  
   display:block;
-  z-index:3;                                /* ← TOP of stack      */
+  z-index:3;                                
 }
-/* keep the paragraph that Pandoc wraps around the link
-   from becoming the positioning context                     */
-.cell-link p{position:static;margin:0;}
 
-/* ─── darken on hover ─────────────────────────────────────── */
+/* ─── gradient scrim overlay (LIGHTENED) ─────────────────── */
 .grid-cell::before{
   content:"";
   position:absolute; inset:0;
-  background:rgba(0,0,0,0);                 /* transparent idle    */
-  transition:background .25s ease;
-  pointer-events:none;                      /* clicks pass through */
-  z-index:0;                                /* under everything    */
-}
-.grid-cell:hover::before{
-  background:rgba(0,0,0,.65);               /* dark mask           */
+  /* Lightened from 0.95 -> 0.7 at bottom and 0.6 -> 0.3 at top point */
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%);                 
+  pointer-events:none;                      
+  z-index:1;                                
 }
 
-/* ─── text fade-in ────────────────────────────────────────── */
-.grid-cell :is(h1,h2,h3,p){
-  opacity:0; transform:translateY(6px);
-  transition:opacity .25s ease,transform .25s ease;
+/* ─── text visibility & swish ───────────────────────────── */
+.grid-cell :is(h1,h2,h3){
+  position:relative;
+  z-index:2;
+  opacity: 1;
+  /* Stronger shadow helps text stay visible even with less dimming */
+  text-shadow: 2px 2px 5px rgba(0,0,0,1);
+  margin: 0;
+  font-size: 1.3rem; 
+  transition: transform 0.3s ease;
 }
-/* headings need to sit above the overlay but below the link
-   so the text remains visible and clicks still work          */
-.grid-cell :is(h1,h2,h3){position:relative;z-index:2;}
 
-.grid-cell:hover :is(h1,h2,h3,p){
-  opacity:1; transform:none;
+.grid-cell p {
+  position: relative;
+  z-index: 2;
+  opacity: 0; 
+  max-height: 0; 
+  margin: 0;
+  overflow: hidden;
+  font-size: 0.85em;
+  line-height: 1.3;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,1);
+  transition: opacity 0.3s ease, max-height 0.4s ease, margin-top 0.3s ease;
 }
 
-/* ─── image assignment (ONE place) ───────────────────────── */
+/* On hover, paragraph expands, pushing the title to the top */
+.grid-cell:hover p {
+  opacity: 1; 
+  max-height: 200px; 
+  margin-top: 10px;
+}
+
+/* ─── image assignment ───────────────────────────────────── */
 #blog-cell   {background-image:url(media/zines_tn.png)}
-
 #parkrun-cell{background-image:url(media/parkruns_tn.png)}
 #LVU50K-cell {background-image:url(media/turtle_trail.png)}
-
 #appsgames-cell{background-image:url(media/pfbrain_tn.jpg)}
 #posts-cell{background-image:url(media/pfbrain_tn.jpg)}
 #bookr-cell  {background-image:url(media/reviews_tn.png)}
 
-/* ─── nuke the heading underline ─────────────────────────── */
-.grid h2{          /* or .g-col-12 h2 if you prefer */
-  border-bottom:0;
-}
-
+/* ─── layout clean-up ────────────────────────────────────── */
+.grid h2{border-bottom:0;}
 .grid hr{display:none;}
