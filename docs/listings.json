@@ -1,13 +1,5 @@
 [
   {
-    "listing": "/posts.html",
-    "items": [
-      "/posts/other/STR_Alligator.html",
-      "/posts/other/STR_TheWorldIsVeryOld.html",
-      "/posts/other/did_djs.html"
-    ]
-  },
-  {
     "listing": "/reviews.html",
     "items": [
       "/posts/reviews/BR_BloodMeridianCormacMcCarthy.html",
@@ -28,6 +20,14 @@
       "/posts/reviews/PR_BecktonPark.html",
       "/posts/reviews/PR_WansteadFlats2.html",
       "/posts/reviews/PR_HighburyFields.html"
+    ]
+  },
+  {
+    "listing": "/posts.html",
+    "items": [
+      "/posts/other/STR_Alligator.html",
+      "/posts/other/STR_TheWorldIsVeryOld.html",
+      "/posts/other/did_djs.html"
     ]
   }
 ]
