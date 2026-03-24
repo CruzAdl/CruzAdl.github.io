@@ -1,33 +1,34 @@
 [
   {
-    "listing": "/reviews.html",
+    "listing": "/index_pages/reviews.html",
     "items": [
-      "/posts/reviews/BR_BloodMeridianCormacMcCarthy.html",
-      "/posts/reviews/BR_WomenAndPowerMaryBeard.html",
-      "/posts/reviews/BR_GoodOldNeonDFW.html",
-      "/posts/reviews/BR_TheClosedCircleJC.html",
-      "/posts/reviews/FR_LVTNymph.html",
-      "/posts/reviews/PR_WansteadFlats.html",
-      "/posts/reviews/PR_BecktonPark.html",
-      "/posts/reviews/PR_WansteadFlats2.html",
-      "/posts/reviews/PR_HighburyFields.html"
+      "/index_pages/posts/reviews/PR_HighburyFields.html",
+      "/index_pages/posts/reviews/PR_WansteadFlats2.html",
+      "/index_pages/posts/reviews/PR_BecktonPark.html",
+      "/index_pages/posts/reviews/PR_WansteadFlats.html",
+      "/index_pages/posts/reviews/FR_LVTNymph.html",
+      "/index_pages/posts/reviews/BR_TheClosedCircleJC.html",
+      "/index_pages/posts/reviews/BR_GoodOldNeonDFW.html",
+      "/index_pages/posts/reviews/BR_WomenAndPowerMaryBeard.html",
+      "/index_pages/posts/reviews/BR_BloodMeridianCormacMcCarthy.html"
     ]
   },
   {
-    "listing": "/parkrun.html",
+    "listing": "/index_pages/posts.html",
     "items": [
-      "/posts/reviews/PR_WansteadFlats.html",
-      "/posts/reviews/PR_BecktonPark.html",
-      "/posts/reviews/PR_WansteadFlats2.html",
-      "/posts/reviews/PR_HighburyFields.html"
+      "/index_pages/posts/other/athletics_integrity.html",
+      "/index_pages/posts/other/did_djs.html",
+      "/index_pages/posts/other/STR_Alligator.html",
+      "/index_pages/posts/other/STR_TheWorldIsVeryOld.html"
     ]
   },
   {
-    "listing": "/posts.html",
+    "listing": "/index_pages/parkrun.html",
     "items": [
-      "/posts/other/STR_Alligator.html",
-      "/posts/other/STR_TheWorldIsVeryOld.html",
-      "/posts/other/did_djs.html"
+      "/index_pages/posts/reviews/PR_WansteadFlats.html",
+      "/index_pages/posts/reviews/PR_BecktonPark.html",
+      "/index_pages/posts/reviews/PR_WansteadFlats2.html",
+      "/index_pages/posts/reviews/PR_HighburyFields.html"
     ]
   }
 ]
