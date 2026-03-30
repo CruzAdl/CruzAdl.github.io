@@ -1,5 +1,14 @@
 [
   {
+    "listing": "/index_pages/parkrun.html",
+    "items": [
+      "/index_pages/blog/reviews/PR_WansteadFlats.html",
+      "/index_pages/blog/reviews/PR_BecktonPark.html",
+      "/index_pages/blog/reviews/PR_WansteadFlats2.html",
+      "/index_pages/blog/reviews/PR_HighburyFields.html"
+    ]
+  },
+  {
     "listing": "/index_pages/posts.html",
     "items": [
       "/index_pages/blog/other/athletics_integrity.html",
@@ -20,15 +29,6 @@
       "/index_pages/blog/reviews/BR_GoodOldNeonDFW.html",
       "/index_pages/blog/reviews/BR_WomenAndPowerMaryBeard.html",
       "/index_pages/blog/reviews/BR_BloodMeridianCormacMcCarthy.html"
-    ]
-  },
-  {
-    "listing": "/index_pages/parkrun.html",
-    "items": [
-      "/index_pages/blog/reviews/PR_WansteadFlats.html",
-      "/index_pages/blog/reviews/PR_BecktonPark.html",
-      "/index_pages/blog/reviews/PR_WansteadFlats2.html",
-      "/index_pages/blog/reviews/PR_HighburyFields.html"
     ]
   }
 ]
