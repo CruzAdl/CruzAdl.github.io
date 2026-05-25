@@ -1,0 +1,33 @@
+[
+  {
+    "listing": "/index_pages/parkrun.html",
+    "items": [
+      "/index_pages/blog/reviews/PR_WansteadFlats.html",
+      "/index_pages/blog/reviews/PR_BecktonPark.html",
+      "/index_pages/blog/reviews/PR_WansteadFlats2.html",
+      "/index_pages/blog/reviews/PR_HighburyFields.html"
+    ]
+  },
+  {
+    "listing": "/index_pages/posts.html",
+    "items": [
+      "/index_pages/blog/other/did_djs.html",
+      "/index_pages/blog/other/STR_Alligator.html",
+      "/index_pages/blog/other/STR_TheWorldIsVeryOld.html"
+    ]
+  },
+  {
+    "listing": "/index_pages/reviews.html",
+    "items": [
+      "/index_pages/blog/reviews/PR_HighburyFields.html",
+      "/index_pages/blog/reviews/PR_WansteadFlats2.html",
+      "/index_pages/blog/reviews/PR_BecktonPark.html",
+      "/index_pages/blog/reviews/PR_WansteadFlats.html",
+      "/index_pages/blog/reviews/FR_LVTNymph.html",
+      "/index_pages/blog/reviews/BR_TheClosedCircleJC.html",
+      "/index_pages/blog/reviews/BR_GoodOldNeonDFW.html",
+      "/index_pages/blog/reviews/BR_WomenAndPowerMaryBeard.html",
+      "/index_pages/blog/reviews/BR_BloodMeridianCormacMcCarthy.html"
+    ]
+  }
+]
