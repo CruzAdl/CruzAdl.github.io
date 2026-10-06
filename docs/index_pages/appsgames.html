@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -39,10 +42,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-45431c2918bd31147ddb3fa7038bb99f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ba8f7c244c1f50cbf6c6a3aa3874339a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,6 +116,64 @@ ul.task-list li input[type="checkbox"] {
 <section id="game-2" class="level1">
 <h1>Game 2</h1>
 <p><a href="https://en.wikipedia.org/wiki/The_Game_(mind_game)">The Game</a> Sorry :)</p>
+</section>
+<section id="game-3" class="level1">
+<h1>Game 3</h1>
+<p><a href="appgms_3/game3blog.html" class="btn btn-primary" target="_blank">I want to play the game</a></p>
+<iframe src="appgms_3/game3blog.html" width="100%" height="650px" style="border: 1px solid #ddd; border-radius: 6px;"></iframe>
+<p>Everything but the prompts was machine-generated.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Executive Summary">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Executive Summary
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>EXECUTIVE SUMMARY</p>
+<p>Project: “Anti-Game Blog” Single-Page Web Application</p>
+<p>Goal: To create a unique, interactive blog interface that contrasts a chaotic, game-like navigation system with a static, anti-game philosophy.</p>
+<p>Development Progression:</p>
+<p>The project was built in four main iterations:</p>
+<ol type="1">
+<li><p>Core Engine: Established the physics engine for a bouncing circle containing independently bouncing clickable links, set against a background featuring the text “I do not want to play the game.”</p></li>
+<li><p>Static Toggle: Implemented an accessibility/readability feature allowing users to click the background to halt all physics and switch to a standard, static flexbox layout.</p></li>
+<li><p>Visual &amp; Pacing Adjustments: Significantly slowed down the physics velocities to improve usability and began adjusting the background text visibility.</p></li>
+<li><p>Content Delivery &amp; Contrast: Finalized the background with massive, high-contrast repeating typography to ensure absolute visibility. Added a top-half sliding modal to display blog content when links are clicked, allowing the “game” to continue running underneath.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Conversation Record">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Conversation Record
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>CONVERSATION RECORD</p>
+<p>USER (Turn 1): App whee background is large print text “I do not want to play the game” in middle of screen there is a circle in it bouncing around moving around there are words, each is a clickable link to a page, this is like a special kind of blog site, build it</p>
+<p>AI (Turn 1): [Generated initial index.html containing the CSS and JavaScript for the bouncing container and inner bouncing words, utilizing requestAnimationFrame for physics.]</p>
+<p>USER (Turn 2): Can you ensure that clicking anywhere in the background, where it says “I do not…” Creates and switches to a completely static version of the site where everything is just laid out in front of the visitor, no game</p>
+<p>AI (Turn 2): [Updated index.html to include an event listener on the background layer. Added an ‘is-static’ CSS class toggle to the body that overrides the inline physics positioning with standard, centered flexbox styling.]</p>
+<p>USER (Turn 3): All good. Save as v1, now add text to the background, it is invisible as of v1, make it very visible, also make things move slower</p>
+<p>AI (Turn 3): [Updated index.html to drastically scale down the velocity multipliers (vx and vy) in the JavaScript. Attempted to increase the contrast of the background text and darkened the bouncing circle for better legibility over the text.]</p>
+<p>USER (Turn 4): Now clicking on a word opens a text box in the upper half, with the game still visible, also, I still could not see text in the background</p>
+<p>AI (Turn 4): [Updated index.html with the final major revisions. - Background: Changed the text to a massive 8vw font weight 900, solid black on a light gray background, repeating the string 250 times to guarantee full screen coverage. - UI: Added a fixed-position <code>#reader-modal</code> taking up the top 50vh of the screen with a slide-down animation. - Logic: Mapped the bouncing words to a dictionary of dummy blog posts, populating and revealing the top-half modal upon click while ensuring event bubbling didn’t trigger the background static toggle.]</p>
+<p>USER (Turn 5): Can you make a textfile with the record of this conversation along with an executive summary</p>
+<p>AI (Turn 5): [Generates conversation_log.txt file.]</p>
+</div>
+</div>
+</div>
 
 
 </section>
