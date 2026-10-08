@@ -89,7 +89,390 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>comin soon, just you wait, just wait a little longer …</p>
+
+<style>
+/* Full screen black overlay covering the whole page */
+#wait-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999999 !important;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+/* Base style for all waiting screen text to prevent Quarto from hiding it */
+.wait-text {
+  color: #cccccc !important;
+  font-size: 1.5rem !important;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Initial waiting text */
+#initial-message {
+  padding: 0 2rem;
+  margin: 0;
+}
+
+/* Container for the counter text */
+#counter-ui {
+  display: none; 
+  margin-top: 1rem;
+}
+
+/* The actual beating number */
+#counter {
+  display: inline-block; 
+  font-family: monospace;
+  font-weight: bold;
+  color: #ffffff !important;
+  font-size: 2.5rem !important;
+  margin: 0 0.5rem;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Leaderboard link text - pushed to the absolute bottom */
+#leaderboard-link {
+  display: none;
+  position: absolute;
+  bottom: 5vh; 
+  color: #aaaaaa !important;
+  font-size: 1.2rem !important;
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+
+#leaderboard-link:hover {
+  color: #ffffff !important;
+}
+
+/* Leaderboard Modal */
+#leaderboard-modal {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: #111111;
+  border: 1px solid #333333;
+  border-radius: 10px;
+  padding: 2rem 3rem;
+  z-index: 10;
+}
+
+.lb-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 250px;
+  margin: 0.5rem 0;
+  font-size: 1.3rem;
+  color: #dddddd;
+}
+
+.lb-row.highlight {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  padding: 0.5rem 0;
+}
+
+#close-leaderboard {
+  margin-top: 2rem;
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#close-leaderboard:hover {
+  background-color: #555555;
+}
+
+/* The twinkle link - massive and brighter */
+#twinkle {
+  position: fixed;
+  font-size: 10rem;
+  cursor: pointer;
+  display: none;
+  user-select: none;
+  text-shadow: 0 0 30px #fff, 0 0 60px #fdfd96; 
+  animation: pulse 0.8s infinite alternate;
+  z-index: 10000000 !important; 
+}
+
+@keyframes pulse {
+  from { opacity: 0.6; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1.2); }
+}
+
+/* Keeps the actual content layered normally underneath the overlay */
+#actual-content {
+  position: relative;
+  z-index: 1; 
+}
+
+/* Back Home Button styling */
+.home-btn {
+  display: inline-block;
+  margin: 1rem 0 2rem 0;
+  padding: 0.5rem 1rem;
+  background-color: #333333;
+  color: #ffffff !important;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.home-btn:hover {
+  background-color: #555555;
+}
+</style>
+
+<div id="wait-screen">
+  <div id="initial-message" class="wait-text">comin soon, just you wait, just wait a little longer ...</div>
+  
+  <div id="counter-ui" class="wait-text">
+    you have waited for <span id="counter">0</span> seconds
+  </div>
+  
+  <div id="leaderboard-link" class="wait-text">see leaderboard</div>
+
+  <div id="leaderboard-modal">
+    <h2 style="color: white; margin-top: 0;">Leaderboard</h2>
+    <div class="lb-row">
+      <span>1. your nemesis</span>
+      <span id="score-nemesis">0</span>
+    </div>
+    <div class="lb-row highlight">
+      <span>2. you</span>
+      <span id="score-you">0</span>
+    </div>
+    <div class="lb-row">
+      <span>3. The Pope</span>
+      <span id="score-pope">0</span>
+    </div>
+    <button id="close-leaderboard">Keep Waiting</button>
+  </div>
+  
+  <div id="twinkle">✨</div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  let seconds = 0;
+  const initialMessage = document.getElementById('initial-message');
+  const counterUI = document.getElementById('counter-ui');
+  const counterEl = document.getElementById('counter');
+  const leaderboardLink = document.getElementById('leaderboard-link');
+  const leaderboardModal = document.getElementById('leaderboard-modal');
+  const twinkleEl = document.getElementById('twinkle');
+  const waitScreen = document.getElementById('wait-screen');
+
+  // Wait 2.5 seconds before transitioning from the intro message to the counter
+  setTimeout(() => {
+    initialMessage.style.display = 'none';
+    counterUI.style.display = 'block'; 
+    leaderboardLink.style.display = 'block';
+
+    // Start incrementing the counter every second
+    setInterval(() => {
+      seconds++;
+      counterEl.innerText = seconds;
+    }, 1000);
+
+  }, 2500);
+
+  // Leaderboard Logic
+  leaderboardLink.addEventListener('click', () => {
+    counterUI.style.display = 'none';
+    leaderboardLink.style.display = 'none';
+    leaderboardModal.style.display = 'flex';
+
+    // Calculate scores dynamically based on exact moment clicked
+    const nemesisGap = Math.floor(Math.random() * 5) + 2; // Nemesis is 2-6 seconds ahead
+    let popeGap = Math.floor(Math.random() * 5) + 2; // Pope is 2-6 seconds behind
+    
+    document.getElementById('score-nemesis').innerText = seconds + nemesisGap;
+    document.getElementById('score-you').innerText = seconds;
+    document.getElementById('score-pope').innerText = Math.max(0, seconds - popeGap);
+  });
+
+  // Close Leaderboard
+  document.getElementById('close-leaderboard').addEventListener('click', () => {
+    leaderboardModal.style.display = 'none';
+    counterUI.style.display = 'block';
+    leaderboardLink.style.display = 'block';
+  });
+
+  // Function to show twinkle at random coordinates
+  function showTwinkle() {
+    const x = Math.random() * 70 + 10; 
+    const y = Math.random() * 70 + 10; 
+    twinkleEl.style.left = x + 'vw';
+    twinkleEl.style.top = y + 'vh';
+    twinkleEl.style.display = 'block';
+
+    // Hide it again after a random duration (2.5 to 5 seconds)
+    setTimeout(() => {
+      twinkleEl.style.display = 'none';
+      scheduleNextTwinkle();
+    }, Math.random() * 2500 + 2500);
+  }
+
+  // Schedule the next appearance of the twinkle
+  function scheduleNextTwinkle() {
+    // Appears again quickly (0.2 to 1 seconds)
+    setTimeout(showTwinkle, Math.random() * 800 + 200);
+  }
+
+  // Start the twinkle loop
+  scheduleNextTwinkle();
+
+  // Reveal content when clicked
+  twinkleEl.addEventListener('click', () => {
+    waitScreen.style.display = 'none';
+  });
+});
+</script>
+
+<div id="actual-content">
+<p><a href="../index.html" class="home-btn">← Back Home</a></p>
+<section id="projects-races" class="level1">
+<h1><a href="index_pages/projects.qmd">Projects &amp; Races</a></h1>
+<ul>
+<li><a href="index_pages/projects.qmd#lea-valley-50k">Lea Valley 50K</a></li>
+<li><a href="index_pages/projects.qmd#vuelta-a-la-casa-de-campo-trail-16k">Vuelta a la Casa de Campo: Trail 16K</a></li>
+<li><a href="index_pages/projects.qmd#parkbikerun-ic10">ParkBike&amp;Run IC10</a></li>
+<li><a href="index_pages/projects.qmd#mountainman-grossarltal-30k">Mountainman Grossarltal: 30K</a></li>
+<li><a href="index_pages/projects.qmd#epping-forest-50k">Epping Forest 50K</a></li>
+</ul>
+</section>
+<section id="parkrun" class="level1">
+<h1><a href="index_pages/parkrun.qmd">Parkrun</a></h1>
+<ul>
+<li><a href="index_pages/parkrun.qmd#borough-challenge-map">Borough Challenge (Map)</a></li>
+<li><a href="index_pages/parkrun.qmd#borough-challenge-timeline">Borough Challenge (Timeline)</a></li>
+<li><a href="index_pages/parkrun.qmd#parkruns">Parkruns</a></li>
+<li><a href="index_pages/parkrun.qmd#courses">Courses</a></li>
+</ul>
+</section>
+<section id="posts" class="level1">
+<h1><a href="index_pages/posts.qmd">Posts</a></h1>
+<ul>
+<li><a href="index_pages/blog/other/did_djs.qmd">Desert Island Discs DJs</a></li>
+<li><a href="index_pages/blog/other/STR_TheWorldIsVeryOld.qmd">The World Is Very Old</a></li>
+<li><a href="index_pages/blog/other/STR_Alligator.qmd">Alligator</a></li>
+</ul>
+</section>
+<section id="book-film-reviews" class="level1">
+<h1><a href="index_pages/reviews.qmd">Book &amp; Film Reviews</a></h1>
+<ul>
+<li><a href="index_pages/blog/reviews/BR_BloodMeridianCormacMcCarthy.qmd">Blood Meridian by Cormac McCarthy</a></li>
+<li><a href="index_pages/blog/reviews/BR_GoodOldNeonDFW.qmd">Good Old Neon by David Foster Wallace</a></li>
+<li><a href="index_pages/blog/reviews/BR_TheClosedCircleJC.qmd">The Closed Circle by Jonathan Coe</a></li>
+<li><a href="index_pages/blog/reviews/BR_WomenAndPowerMaryBeard.qmd">Women and Power by Mary Beard</a></li>
+<li><a href="index_pages/blog/reviews/FR_LVTNymph.qmd">LVT Nymph</a></li>
+</ul>
+</section>
+<section id="park-reviews" class="level1">
+<h1><a href="index_pages/reviews.qmd">Park Reviews</a></h1>
+<ul>
+<li><a href="index_pages/blog/reviews/PR_BecktonPark.qmd">Beckton Park</a></li>
+<li><a href="index_pages/blog/reviews/PR_HighburyFields.qmd">Highbury Fields</a></li>
+<li><a href="index_pages/blog/reviews/PR_WansteadFlats.qmd">Wanstead Flats</a></li>
+<li><a href="index_pages/blog/reviews/PR_WansteadFlats2.qmd">Wanstead Flats 2</a></li>
+</ul>
+</section>
+<section id="apps-and-games" class="level1">
+<h1><a href="index_pages/appsgames.qmd">Apps and Games</a></h1>
+<ul>
+<li><a href="index_pages/appsgames.qmd#game-1">Game 1</a></li>
+<li><a href="index_pages/appsgames.qmd#game-2">Game 2</a></li>
+<li><a href="index_pages/appsgames.qmd#game-3">Game 3</a></li>
+</ul>
+</section>
+<section id="life-slices-hidden" class="level1">
+<h1><a href="_hidden/lifeslices/RFRLFLT_January_2024.qmd">Life Slices (Hidden)</a></h1>
+<ul>
+<li><a href="_hidden/lifeslices/RFRLFLT_December_2023.qmd">December 2023</a></li>
+<li><a href="_hidden/lifeslices/RFRLFLT_January_2024.qmd">January 2024</a></li>
+<li><a href="_hidden/lifeslices/RFRLFLT_February_2024.qmd">February 2024</a></li>
+</ul>
+</section>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  let seconds = 0;
+  const initialMessage = document.getElementById('initial-message');
+  const counterUI = document.getElementById('counter-ui');
+  const counterEl = document.getElementById('counter');
+  const leaderboardEl = document.getElementById('leaderboard');
+  const twinkleEl = document.getElementById('twinkle');
+  const waitScreen = document.getElementById('wait-screen');
+
+  // Wait 2.5 seconds before transitioning from the intro message to the counter
+  setTimeout(() => {
+    initialMessage.style.display = 'none';
+    counterUI.style.display = 'block'; 
+    leaderboardEl.style.display = 'block';
+
+    // Start incrementing the counter every second
+    setInterval(() => {
+      seconds++;
+      counterEl.innerText = seconds;
+    }, 1000);
+
+  }, 2500);
+
+  // Function to show twinkle at random coordinates
+  function showTwinkle() {
+    const x = Math.random() * 70 + 10; 
+    const y = Math.random() * 70 + 10; 
+    twinkleEl.style.left = x + 'vw';
+    twinkleEl.style.top = y + 'vh';
+    twinkleEl.style.display = 'block';
+
+    // Hide it again after a random duration (2.5 to 5 seconds)
+    setTimeout(() => {
+      twinkleEl.style.display = 'none';
+      scheduleNextTwinkle();
+    }, Math.random() * 2500 + 2500);
+  }
+
+  // Schedule the next appearance of the twinkle
+  function scheduleNextTwinkle() {
+    // Appears again quickly (0.2 to 1 seconds)
+    setTimeout(showTwinkle, Math.random() * 800 + 200);
+  }
+
+  // Start the twinkle loop
+  scheduleNextTwinkle();
+
+  // Reveal content when clicked
+  twinkleEl.addEventListener('click', () => {
+    waitScreen.style.display = 'none';
+  });
+});
+</script>
 
 
 
